@@ -1,0 +1,34 @@
+import pandas as pd
+import statsmodels.api as sm
+
+# Sample data extracted from the image
+data = {
+    '1': [16, 21, 22, 14, 26],
+    '2': [27, 39, 25, 59, 58],
+    '3': [22, 7, 6, 3, 3],
+    '4': [10, 13, 18, 27, 19],
+    '5': [29, 23, 17, 38, 46],
+	'6': [6, 29, 18, 25, 18],
+	'7': [12, 12, 10, 17, 15],
+	'8': [5, 8, 5, 15, 27]
+}
+
+# Convert the data to a DataFrame
+df = pd.DataFrame(data)
+
+# Stack the DataFrame to have one column for Clusters and another for values
+df_stacked = df.stack().reset_index()
+df_stacked.columns = ['Index', 'Cluster', 'Value']
+
+# Convert the 'Cluster' column to numeric (it might be a string)
+df_stacked['Cluster'] = pd.to_numeric(df_stacked['Cluster'])
+
+# Add a constant (intercept) to the model
+X = sm.add_constant(df_stacked['Cluster'])
+y = df_stacked['Value']
+
+# Fit the regression model
+model = sm.OLS(y, X).fit()
+
+# Get the summary
+print(model.summary())
