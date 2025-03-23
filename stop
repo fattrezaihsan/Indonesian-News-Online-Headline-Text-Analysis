@@ -1,0 +1,10 @@
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+import pandas as pd
+
+factory = StopWordRemoverFactory()
+stopword = factory.create_stop_word_remover()
+
+df = pd.read_csv("stoppp.csv")
+for i, Tokenizing in enumerate (df['Tokenizing']):
+    stop = stopword.remove(Tokenizing)
+    print(i,stop + '\n')
