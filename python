@@ -1,0 +1,121 @@
+import numpy as np 
+import pandas as pd 
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.feature_extraction import text
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+import nltk
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+from nltk.tokenize import RegexpTokenizer
+from nltk.stem.snowball import SnowballStemmer
+
+data = pd.read_csv(r"C:\Users\fattr\excel.csv",usecols =["usedtitle"])
+data.head()
+
+data.info()
+
+import string 
+import re #regex library
+
+# import word_tokenize & FreqDist from NLTK
+from nltk.tokenize import word_tokenize 
+from nltk.probability import FreqDist
+
+# ------ Tokenizing ---------
+
+def remove_usedtitle_special(text):
+    # remove tab, new line, ans back slice
+    text = text.replace('\\t'," ").replace('\\n'," ").replace('\\u'," ").replace('\\',"")
+    # remove non ASCII (emoticon, chinese word, .etc)
+    text = text.encode('ascii', 'replace').decode('ascii')
+    # remove mention, link, hashtag
+    text = ' '.join(re.sub("([@#][A-Za-z0-9]+)|(\w+:\/\/\S+)"," ", text).split())
+    # remove incomplete URL
+    return text.replace("http://", " ").replace("https://", " ")
+                
+data['usedtitle'] = data['usedtitle'].apply(remove_usedtitle_special)
+
+#remove number
+def remove_number(text):
+    return  re.sub(r"\d+", "", text)
+
+data['usedtitle'] = data['usedtitle'].apply(remove_number)
+
+#remove punctuation
+def remove_punctuation(text):
+    return text.translate(str.maketrans("","",string.punctuation))
+
+data['usedtitle'] = data['usedtitle'].apply(remove_punctuation)
+
+#remove whitespace leading & trailing
+def remove_whitespace_LT(text):
+    return text.strip()
+
+data['usedtitle'] = data['usedtitle'].apply(remove_whitespace_LT)
+
+#remove multiple whitespace into single whitespace
+def remove_whitespace_multiple(text):
+    return re.sub('\s+',' ',text)
+
+data['usedtitle'] = data['usedtitle'].apply(remove_whitespace_multiple)
+
+# remove single char
+def remove_singl_char(text):
+    return re.sub(r"\b[a-zA-Z]\b", "", text)
+
+data['usedtitle'] = data['usedtitle'].apply(remove_singl_char)
+
+# NLTK word rokenize 
+def word_tokenize_wrapper(text):
+    return word_tokenize(text)
+
+data['usedtitle_tokens'] = data['usedtitle'].apply(word_tokenize_wrapper)
+
+print('Tokenizing Result : \n') 
+print(data['usedtitle_tokens'].head())
+print('\n\n\n')
+
+
+from nltk.corpus import stopwords
+
+# ----------------------- get stopword from NLTK stopword -------------------------------
+# get stopword indonesia
+list_stopwords = stopwords.words('indonesian')
+
+
+# convert list to dictionary
+list_stopwords = set(list_stopwords)
+
+
+
+vectorizer = TfidfVectorizer(list_stopwords = list(list_stopwords))
+
+desc = data['usedtitle'].values
+X = vectorizer.fit_transform(desc)
+
+stemmer = SnowballStemmer('english')
+tokenizer = RegexpTokenizer(r'[a-zA-Z\']+')
+
+def tokenize(text):
+    return [stemmer.stem(word) for word in tokenizer.tokenize(text.lower())]
+	
+
+
+vectorizer2 = TfidfVectorizer(list_stopwords = list_stopwords, tokenizer = tokenize)
+X2 = vectorizer2.fit_transform(desc)
+word_features2 = vectorizer2.get_feature_names()	
+
+from sklearn.cluster import KMeans
+wcss = []
+for i in range(1,11):
+    kmeans = KMeans(n_clusters=i,init='k-means++',max_iter=300,n_init=10,random_state=0)
+    kmeans.fit(X3)
+    wcss.append(kmeans.inertia_)
+plt.plot(range(1,11),wcss)
+plt.title('The Elbow Method')
+plt.xlabel('Number of clusters')
+plt.ylabel('WCSS')
+plt.savefig('elbow.png')
+plt.show()
