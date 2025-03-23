@@ -1,0 +1,26 @@
+import pandas as pd
+from scipy.stats import chi2_contingency
+
+# Example contingency table for your data
+data = {
+    'Surrender': [16, 21, 22, 14, 26],
+    'Release': [27, 39, 25, 59, 58],
+    'Illegal Trade and Seizure': [22, 7, 6, 3, 3],
+    'Extinction Threat': [5, 8, 5, 15, 27],
+    'Government’s Conservation Efforts': [10, 13, 18, 27, 19],
+    'Sumatran Slow Lorises': [29, 23, 17, 38, 46],
+    'Releases with Other Wild Animals': [6, 29, 18, 25, 18],
+    'Wild Slow Lorises': [12, 12, 10, 17, 15]
+}
+
+# Create a DataFrame for the contingency table
+df = pd.DataFrame(data, index=['2018', '2019', '2020', '2021', '2022'])
+
+# Perform Chi-Square Test
+chi2, p, dof, expected = chi2_contingency(df)
+
+# Display results
+print(f"Chi-square statistic: {chi2}")
+print(f"P-value: {p}")
+print(f"Degrees of freedom: {dof}")
+print("Expected frequencies:\n", expected)
