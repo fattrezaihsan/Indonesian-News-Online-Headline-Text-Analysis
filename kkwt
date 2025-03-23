@@ -1,0 +1,18 @@
+import pandas as pd
+from scipy.stats import kruskal
+
+#dataframe
+data = {
+    'Cluster': ['one','one','one','one','one','two','two','two','two','two','three','three','three','three','three','four','four','four','four','four','five','five','five','five','five','six','six','six','six','six','seven','seven','seven','seven','seven','eight','eight','eight','eight','eight',],
+    'Value': [16, 21, 22, 14, 26, 27, 39, 25, 59, 58, 22, 25, 6, 3, 3, 10, 13, 18, 27, 19, 29, 23, 17, 38, 46, 6, 29, 18, 25, 18, 12, 12, 10, 17, 15, 5, 8, 5, 15, 27]
+}
+df = pd.DataFrame(data)
+
+# Group the data by clusters
+groups = [group['Value'].values for name, group in df.groupby('Cluster')]
+
+# Perform Kruskal-Wallis test
+kruskal_stat, p_value = kruskal(*groups)
+
+print(f"Kruskal-Wallis H-statistic: {kruskal_stat}")
+print(f"P-value: {p_value}")
