@@ -1,0 +1,145 @@
+
+
+import pandas as pd 
+import numpy as np
+
+DATABERITA = pd.read_csv("Text_Preprocessing.csv", usecols=["label", "title_tokens"])
+DATABERITA.columns = ["label", "title"]
+
+DATABERITA.head()
+
+# convert list formated string to list
+import ast
+
+def convert_text_list(texts):
+    texts = ast.literal_eval(texts)
+    return [text for text in texts]
+
+DATABERITA["title_list"] = DATABERITA["title"].apply(convert_text_list)
+
+
+print(DATABERITA["title_list"][90])
+
+print("\ntype : ", type(DATABERITA["title_list"][90]))
+
+def calc_TF(document):
+    # Counts the number of times the word appears in review
+    TF_dict = {}
+    for term in document:
+        if term in TF_dict:
+            TF_dict[term] += 1
+        else:
+            TF_dict[term] = 1
+    # Computes tf for each word
+    for term in TF_dict:
+        TF_dict[term] = TF_dict[term] / len(document)
+    return TF_dict
+
+DATABERITA["TF_dict"] = DATABERITA['title_list'].apply(calc_TF)
+
+DATABERITA["TF_dict"].head()
+
+# Check TF result
+index = 90
+
+print('%20s' % "term", "\t", "TF\n")
+for key in DATABERITA["TF_dict"][index]:
+    print('%20s' % key, "\t", DATABERITA["TF_dict"][index][key])
+	
+def calc_DF(tfDict):
+    count_DF = {}
+    # Run through each document's tf dictionary and increment countDict's (term, doc) pair
+    for document in tfDict:
+        for term in document:
+            if term in count_DF:
+                count_DF[term] += 1
+            else:
+                count_DF[term] = 1
+    return count_DF
+
+DF = calc_DF(DATABERITA["TF_dict"])
+
+
+
+n_document = len(DATABERITA)
+
+def calc_IDF(__n_document, __DF):
+    IDF_Dict = {}
+    for term in __DF:
+        IDF_Dict[term] = np.log(__n_document / (__DF[term] + 1))
+    return IDF_Dict
+  
+#Stores the idf dictionary
+IDF = calc_IDF(n_document, DF)
+
+#calc TF-IDF
+def calc_TF_IDF(TF):
+    TF_IDF_Dict = {}
+    #For each word in the review, we multiply its tf and its idf.
+    for key in TF:
+        TF_IDF_Dict[key] = TF[key] * IDF[key]
+    return TF_IDF_Dict
+
+#Stores the TF-IDF Series
+DATABERITA["TF-IDF_dict"] = DATABERITA["TF_dict"].apply(calc_TF_IDF)
+
+# Check TF-IDF result
+index = 90
+
+print('%20s' % "term", "\t", '%10s' % "TF", "\t", '%20s' % "TF-IDF\n")
+for key in DATABERITA["TF-IDF_dict"][index]:
+    print('%20s' % key, "\t", DATABERITA["TF_dict"][index][key] ,"\t" , DATABERITA["TF-IDF_dict"][index][key])
+	
+# sort descending by value for DF dictionary 
+sorted_DF = sorted(DF.items(), key=lambda kv: kv[1], reverse=True)[:50]
+
+# Create a list of unique words from sorted dictionay `sorted_DF`
+unique_term = [item[0] for item in sorted_DF]
+
+def calc_TF_IDF_Vec(__TF_IDF_Dict):
+    TF_IDF_vector = [0.0] * len(unique_term)
+
+    # For each unique word, if it is in the review, store its TF-IDF value.
+    for i, term in enumerate(unique_term):
+        if term in __TF_IDF_Dict:
+            TF_IDF_vector[i] = __TF_IDF_Dict[term]
+    return TF_IDF_vector
+
+DATABERITA["TF_IDF_Vec"] = DATABERITA["TF-IDF_dict"].apply(calc_TF_IDF_Vec)
+
+print("print first row matrix TF_IDF_Vec Series\n")
+print(DATABERITA["TF_IDF_Vec"][0])
+
+print("\nmatrix size : ", len(DATABERITA["TF_IDF_Vec"][0]))
+
+# Convert Series to List
+TF_IDF_Vec_List = np.array(DATABERITA["TF_IDF_Vec"].to_list())
+
+# Sum element vector in axis=0 
+sums = TF_IDF_Vec_List.sum(axis=0)
+
+data = []
+
+for col, term in enumerate(unique_term):
+    data.append((term, sums[col]))
+    
+ranking = pd.DataFrame(data, columns=['term', 'rank'])
+ranking.sort_values('rank', ascending=False)
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+vectorizer = TfidfVectorizer()
+TF_IDF_Vec_List = vectorizer.fit_transform(TF_IDF_Vec_List[:nwords].ravel())
+from sklearn.cluster import KMeans
+wcss = []
+for i in range(1,11):
+    kmeans = KMeans(n_clusters=i,init='k-means++',max_iter=300,n_init=10,random_state=0)
+    kmeans.fit(TF_IDF_Vec_List)
+    wcss.append(kmeans.inertia_)
+plt.plot(range(1,11),wcss)
+plt.title('The Elbow Method')
+plt.xlabel('Number of clusters')
+plt.ylabel('WCSS')
+plt.savefig('elbow.png')
+plt.show()
+
