@@ -1,0 +1,2441 @@
+# import StemmerFactory class
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+
+# create stemmer
+factory = StemmerFactory()
+stemmer = factory.create_stemmer()
+
+# stemming process
+sentence1 = 'tiga ekor kukang dilepasliarkan'
+sentence2 = 'penjual kukang di sumbar divonis    tahun penjara dan denda rp        juta'
+sentence3 = 'suaka margasatwa kerumutan tambah koleksi kukang untuk dilepasliarkan'
+sentence4 = 'kerja konservasi belum selesai   meski satwa dilindungi dikembalikan ke hutan'
+sentence5 = 'membantu vinka   kukang buta yang tak bisa kembali ke habitatnya'
+sentence6 = 'bukan hanya konflik   perdagangan satwa liar dilindungi harus ditangani'
+sentence7 = 'kukang kurus tercabut giginya ini dijual di pasar terbuka   kok bisa '
+sentence8 = 'sungguh malang nasib kukang sumatera albino ini'
+sentence9 = 'ribuan kukang diperdagangkan melalui facebook'
+sentence10 = 'bbksda riau kembalikan kukang jantan berumur    tahun ke habitatnya'
+sentence11 = 'tanpa hukuman berat   kejahatan satwa liar dilindungi akan terus terjadi'
+sentence12 = 'bbksda riau lepasliarkan beruang   macan akar   dan kukang ke habitatnya'
+sentence13 = 'bksda kembali ingatkan warga   pelihara satwa dilindungi hukumnya    tahun penjara   denda rp        juta'
+sentence14 = 'antara pemalas atau memang pelan   ini      hewan paling lambat di dunia'
+sentence15 = 'kukang diperdagangkan melalui facebook'
+sentence16 = 'bksda aceh lepas liarkan kembali siamang dan kukang ke habitatnya'
+sentence17 = 'anak gubernur sumsel serahkan kukang seharga rp        ribu ke bksda'
+sentence18 = 'iar sebut jabar pangsa pasar perdagangan kukang'
+sentence19 = 'jual kukang dan lutung di facebook   seorang petani masuk bui'
+sentence20 = 'bksda aceh gagalkan penjualan dua kukang lewat media sosial'
+sentence21 = 'cerita leony dan iva anak gubernur sumsel temukan kukang langka di pasar '
+sentence22 = 'jual hewan langka lewat facebook warga katulampa berurusan dengan polisi'
+sentence23 = 'apakah kebiasaan anda menggunakan internet membahayakan satwa liar '
+sentence24 = 'jual satwa dilindungi di facebook   petani sumut ditangkap'
+sentence25 = 'ruang hidup untuk satwa penjaga hutan harus kita jaga'
+sentence26 = 'polisi ungkap kasus penjualan satwa dilindungi di pasar ayam cirebon'
+sentence27 = 'belasan satwa dilindungi dilepasliarkan di siantang'
+sentence28 = 'paman birin berikan nama hewan penghuni baru tahura mandiangin'
+sentence29 = 'perdagangan satwa menggila   berikut foto foto hasil sitaan'
+sentence30 = 'bupati tapanuli utara pelihara satwa langka di rumah dinas'
+sentence31 = 'bukan editan photoshop kukang raksasa yang bisa berpose seperti manusia   '
+sentence32 = 'populasi lutung jawa di malang selatan meningkat'
+sentence33 = 'warga muara teweh serahkan satwa beruk kepada bksda'
+sentence34 = 'libur natal dan tahun baru   pengunjung ragunan bisa tembus        ribu'
+sentence35 = 'polisi sita owa hingga kakak tua jambul kuning dari tangan warga'
+sentence36 = 'masyarakat dukung perubahan status cagar alam danau dendam tak sudah'
+sentence37 = 'keren nih kamping anti mainstream di pinggir pantai karangbolong sukabumi'
+sentence38 = 'satwa liar di sekitar tambang emas banyuwangi tetap terjaga'
+sentence39 = 'niat bikin kebun binatang mini di rumah   kasturi ditangkap polisi'
+sentence40 = 'tambahan empat jenis hewan ini   satwa di tahura kian banyak'
+sentence41 = 'penjual hewan langka di media sosial ditangkap polisi'
+sentence42 = 'bksda aceh lepasliarkan    satwa di hutan jantho'
+sentence43 = 'lutung jawa ini hidup bebas kembali di kondang merak'
+sentence44 = 'foto taman wisata alam desaku   berwisata sambil dapat edukasi dan sarana '
+sentence45 = 'daftar satwa langka terancam punah yang kini dirawat di taman rimba '
+sentence46 = 'bakal ada tambang batubara di pangkalan kapas   respon warga '
+sentence47 = 'beli rp        ribu   penjual satwa dilindungi menjualnya rp    juta per ekor'
+sentence48 = 'teknologi tinggi gempur perdagangan ilegal satwa langka'
+sentence49 = 'terungkap inilah fakta mengejutkan di balik buah durian namanya kelelawar '
+sentence50 = 'populasi owa jawa terancam   pokdarwis hutan lindung petungkriyono '
+sentence51 = 'para petualang cantik yang tak paham kima tak boleh dimakan'
+sentence52 = 'studi ekologi dan populasi kukang di pulau bangka '
+sentence53 = 'primata malam gunung ciremai '
+sentence54 = 'kelahiran anak kukang bbksda sumatera utara '
+sentence55 = 'beginilah cara membuat kukang jinak '
+sentence56 = 'bksda lampung selamatkan kukang albino dari transaksi jual beli satwa'
+sentence57 = 'stop kekang kukang '
+sentence58 = 'jelang hari primata indonesia   bksda kalteng release    ekor kukang di sm lamandau dan ca pararawen '
+sentence59 = 'balai besar ksda jatim tangkap penjual kukang online '
+sentence60 = 'sang ibu kukang dan anaknya mendapatkan kembali kebebasannya '
+sentence61 = 'bbksda riau terima kukang dari warga duri '
+sentence62 = '     kukang jawa siap dilepasliarkan di hutan ciamis '
+sentence63 = 'balai ksda aceh lepasliarkan kukang dan siamang '
+sentence64 = 'penyelamatan kukang malang '
+sentence65 = 'para kukang pun akhirnya kembali ke habitatnya '
+sentence66 = 'kukang indonesia diperdagangkan ilegal lewat facebook'
+sentence67 = 'bksda sumatera selatan kembali menerima penyerahan satwa kukang '
+sentence68 = 'bbksda jatim dan bpphlhk jabalnusra tangkap penjual kukang online'
+sentence69 = 'populasi kukang jawa di tasikmalaya terancam habis '
+sentence70 = 'bbksda jabar   mendapat penyerahan ibu dan anak kukang '
+sentence71 = 'pemilik petshop serahkan    kukang pada petugas skw iii bksda kalteng '
+sentence72 = 'jual kukang via facebook      pelajar di bogor ditangkap'
+sentence73 = 'wana dan tirta   kukang sumatera di tanah jawa '
+sentence74 = 'kebebasan      kukang sekaligus kado istimewa bagi jomblo dan lilo di hari hutan internasional '
+sentence75 = 'niat menjual kukang   malah dapat vonis hukum '
+sentence76 = 'diduga kelaparan   kukang jawa ditemukan di rumah warga '
+sentence77 = 'cerita dibalik kukang yang tak bergigi '
+sentence78 = 'hidupan liar rer kukang sunda '
+sentence79 = 'press release sejarah baru dalam upaya penegakan hukum terhadap pelaku perdagangan kukang di indonesia '
+sentence80 = 'warga serahkan seekor kukang sumatera '
+sentence81 = 'bksda amankan tiga pelajar jual kukang '
+sentence82 = 'kukang sumatera yang tersesat di ibukota '
+sentence83 = 'memprihatinkan   ribuan kukang diperdagangkan secara terang terangan lewat facebook '
+sentence84 = 'seorang ibu rumah tangga di tasikmalaya serahkan seekor kukang '
+sentence85 = 'tidak memiliki gigi   kukang jokowi tidak bisa dilepasliarkan '
+sentence86 = 'kisah penyelamatan kukang dan lutung jawa dari pedagang satwa langka '
+sentence87 = 'si lambat   imut dan lucu   si kukang kalimantan '
+sentence88 = 'membantu vinka   kukang buta yang tak bisa kembali ke habitatnya '
+sentence89 = 'kukang albino jalani habituasi '
+sentence90 = 'awas potensi penyakit pada kukang yang dipelihara '
+sentence91 = 'sate gagak dan daging kukang   menu andalan ki joko bodo berpuasa'
+sentence92 = 'kukang jenglot bahaya zoonosis skabies pada kukang '
+sentence93 = '     kukang merdeka di hutan kareumbi '
+sentence94 = 'tiga pelajar penjual kukang diamankan '
+sentence95 = 'yiari            kukang dijual di facebook '
+sentence96 = 'warga serahkan kukang bunting ke koservasi wilayah muara teweh '
+sentence97 = 'berkah seekor kukang dapat rumah baru di tengah banjir riau '
+sentence98 = '             tahun lalu   kukang bertubuh raksasa dan diburu manusia  '
+sentence99 = 'sudah tidak memiliki gigi   jokowi tidak bisa dilepasliarkan '
+sentence100 = 'ribuan kukang diperdagangkan melalui facebook '
+sentence101 = 'uluran tangan untuk lintang '
+sentence102 = 'bksda selamatkan primata langka kukang albino '
+sentence103 = 'dua kukang dilepasliarkan ke alam liar '
+sentence104 = 'derita hima dalam kekangan '
+sentence105 = 'perdagangan kukang mulai marak lagi di pasar hewan  '
+sentence106 = 'wah   penjual kukang terancam lima tahun '
+sentence107 = 'gemblong dkk kembali pulang ke habitatnya '
+sentence108 = 'bksda aceh lepasliarkan kembali siamang dan kukang ke habitatnya '
+sentence109 = 'si kukang albino akhirnya dilepasliarkan '
+sentence110 = 'lepasliarkan orangutan dan kukang di hutan lindung gunung tarak '
+sentence111 = 'iscp launching  kukang coffee '
+sentence112 = 'sebelah mata untuk giyo   lini dan gazpacho '
+sentence113 = 'bksda serang amankan dua hewan untuk santet dan pelet '
+sentence114 = 'pelepasliaran satwa dilindungi di hari cinta puspa dan satwa nasional '
+sentence115 = 'penyerahan satwa dari kota yang berbeda lingkup bbksda jabar '
+sentence116 = 'empat warga serahkan satwa liar kepada bbksda sumut di hari cinta puspa dan satwa nasional '
+sentence117 = 'foto kemarin lepas liar satwa'
+sentence118 = 'diduga jadi korban banjir   bbksda lepas kembali seekor kukang ke alam liar'
+sentence119 = 'dosen unpad yang juga aktivis satwa menerima penyerahan hewan dilindungi'
+sentence120 = 'warga paninjauan serahkan hewan langka ke bksda '
+sentence121 = 'kemah konservasi          di aras napal        '
+sentence122 = 'indonesia seburuk madagaskar dalam memperlakukan primata '
+sentence123 = 'belajar sayang kukang pada karmele llano sanchez '
+sentence124 = 'bksda bandar lampung amankan kukang albino dari perdagangan online'
+sentence125 = 'terkait hewan dilindungi bksda garut akui masih banyak warga yang belum mengetahui'
+sentence126 = 'inilah taman nasional di bogor'
+sentence127 = 'bbkda lepaskan harimau dan beruang madu '
+sentence128 = 'selamat dari perdagangan liar   ayut dan denali kini hidup di hutan gunung tampomas'
+sentence129 = 'kukang albino alby kini hidup liar di bukit barisan selatan'
+sentence130 = 'warga sukabumi serahkan hewan dilindungi '
+sentence131 = 'perdagangan ilegal kukang hewan dilindungi di pasar      ilir palembang digagalkan polisi'
+sentence132 = 'warga kuningan temukan bayi kukang   kondisi lemah dan makan harus disuapi'
+sentence133 = 'cerita evakuasi kukang hingga buaya muara temuan warga pantura '
+sentence134 = 'terungkap   arti motif wajah pada kukang jawa  '
+sentence135 = 'terancam punah   puluhan kukang jawa dilepas di gunung salak'
+sentence136 = 'bbksda jabar evakuasi buaya peliharaan warga'
+sentence137 = 'populasi kukang jawa turun      persen'
+sentence138 = 'berita kukang albino ini kini hidup liar di tnbbs'
+sentence139 = 'sepuluh invididu macan tutul jawa terdeteksi di guntur papandayan'
+sentence140 = 'tempuh hutan menanjak   iar lepas      kukang jawa di gunung sawal'
+sentence141 = 'selain macan tutul   ini satwa yang dilindungi di taman nasional gunung ciremai'
+sentence142 = 'menghargai kehadiran macan tutul jawa di papandayan'
+sentence143 = 'waspada saat mendaki di gunung papandayan   pendaki kabur ketika lihat anak macan tutul'
+sentence144 = 'indonesia lepasliarkan      kukang jawa '
+sentence145 = 'lagi   bksda evakuasi bayi kukang jawa '
+sentence146 = 'jual    ekor kukang di pasar hewan palembang   santi ditangkap'
+sentence147 = 'setiap tahun              kukang jawa dijual di medsos'
+sentence148 = 'bbksda jawa barat terima buaya   kukang   dan kucing hutan dari warga '
+sentence149 = 'koala hingga kukang      hewan yang terlihat lucu namun membahayakan '
+sentence150 = 'tak hanya sengon   pln juga sebut kukang penyebab listrik mati '
+sentence151 = 'upaya pelestarian   pertamina lepasliarkan kukang jawa kembali ke habitatnya '
+sentence152 = 'video irt di lhokseumawe selamatkan seekor kukang   kondisinya mengenaskan'
+sentence153 = 'ibu rumah tangga selamatkan kukang berlumuran darah   tangan dan kaki kiri putus   begini kondisinya'
+sentence154 = 'tahu dari google   warga di indramayu ini takut kukang yang ditangkapnya dilindungi undang'
+sentence155 = 'kukang yang tersesat itu telah diselamatkan '
+sentence156 = 'bksda cirebon terima penyerahan kukang jawa '
+sentence157 = 'polisi kediri amankan warga jual hewan dilindungi '
+sentence158 = '     ekor kukang jawa hasil sitaan dilepasliarkan di gunung sawal ciamis'
+sentence159 = 'polda riau gagalkan perdagangan satwa dilindungi   ada bayi buaya   kancil   kukang hingga burung'
+sentence160 = 'hutan jawa rusak bukan hanya manusia merugi   satwa juga menderita'
+sentence161 = 'nasib si kancil dan puluhan burung pentet eksis di facebook '
+sentence162 = 'eksotisnya berbagai hewan bule ini'
+sentence163 = 'laporkan kepemilikan hewan dilindungi'
+sentence164 = 'bksda sosialisasikan tumbuhan dan satwa dilindungi kepada siswa'
+sentence165 = 'laboratorium budaya siku keluang kampar dibangun seniman riau '
+sentence166 = 'tanpa tidur   bisakah hewan bertahan hidup '
+sentence167 = 'binatang langka bisa santet orang '
+sentence168 = 'jual elang alap jambul   susanto diamankan polisi'
+sentence169 = 'anda suka berwisata di alam liar  ini lima cara untuk menjadi turis yang bertanggung jawab pada alam'
+sentence170 = 'jelajahi bukit siregol purbalingga   ada air terjun yang terlihat instagramable'
+sentence171 = 'melihat profil pajak di sentra kepulauan borneo'
+sentence172 = 'kebun binatang mini di pasuruan digerebek        satwa langka disita'
+sentence173 = 'polda riau tangkap sindikat perdagangan satwa dilindungi '
+sentence174 = 'bila makan kucing jadi ritual ilmu hitam   bagaimana nasib bang grandong  '
+sentence175 = 'masyarakat tidak dapat reward bila serahkan satwa '
+sentence176 = 'selamat hari primata   selamatkan mereka dari perburuan'
+sentence177 = 'yuk   belajar soal elang di sekolah konservasi elang kamojang '
+sentence178 = 'kisah kepedulian pedagang kain pada orangutan di antang kalang '
+sentence179 = 'karang bolong   sempat ditambang yang kini menawan '
+sentence180 = 'pelepasliaran satwa liar sitaan   kurangi biaya dan risiko kematian'
+sentence181 = 'asia tenggara   wilayah dengan laju kepunahan satwa tertinggi di dunia'
+sentence182 = 'melacak orangutan di hutan kendawangan kalimantan '
+sentence183 = 'cerita pedagang kain keliling menyelamatkan bayi orangutan '
+sentence184 = 'cacar monyet dan deretan penyakit primata yang menular ke manusia'
+sentence185 = 'dampak dampak gerhana matahari total'
+sentence186 = '   tempat wisata di banten yang seru dan jarang diketahui   wajib kamu kunjungi '
+sentence187 = 'teror ular kobra di jabodetabek   bksd sudah lepasliarkan ke gunung halimun '
+sentence188 = 'polisi penguji sim ini   ternyata juga pawang ular '
+sentence189 = 'nusakambangan yang indah   penuh mistis '
+sentence190 = 'pmi sukabumi serahkan hewan langka kukang '
+sentence191 = 'lepasliar kukang di hari hidupan liar sedunia '
+sentence192 = '     ekor kukang jawa kembali hidup bebas di hutan gunung halimun salak '
+sentence193 = 'warga sampit serahkan kukang ke bksda kalimantan tengah '
+sentence194 = '   ekor kukang serahan polda sumatera selatan akhirnya kembali ke alam '
+sentence195 = 'twa tampomas dan tb masigit kareumbi jadi rumah baru bagi      kukang jawa '
+sentence196 = 'satu individu kukang diserahkan warga tojai baru   pematang siantar '
+sentence197 = 'kukang jawa   si lucu yang banyak diburu '
+sentence198 = 'peka kukang  pengamatan kukang di hutan kemuning   temanggung   jawa tengah '
+sentence199 = 'kukang korban peluru senapan angin bertambah '
+sentence200 = 'pertamina kembalikan kukang jawa ke habitatnya '
+sentence201 = 'penjual kukang dituntut lima tahun penjara '
+sentence202 = '     kukang kembali pulang ke habitat '
+sentence203 = 'upaya konservasi gigi kukang rehabilitasi '
+sentence204 = 'petugas sptn wilayah v bohorok release kukang dan burung elang '
+sentence205 = 'kukang terluka parah diselamatkan oleh seorang ibu rumah tangga di aceh '
+sentence206 = 'si imut kukang dan tujuh fakta uniknya'
+sentence207 = 'empat bulan dilepasliarkan   kukang albino mampu beradaptasi '
+sentence208 = 'perhutani perhutani lepasliarkan      ekor kukang jawa di gunung sawal ciamis '
+sentence209 = '     kukang serahan masyarakat siap pulang ke habitatnya '
+sentence210 = 'kembalinya kukang muka geni ke hutan talaga bodas garut '
+sentence211 = '     kukang jawa yang disita dari pemburu dinyatakan sehat'
+sentence212 = 'kukang jawa   si pemalu yang paling terancam punah '
+sentence213 = 'warga sukabumi serahkan kukang tersesat pada hari bumi '
+sentence214 = 'pedagang kukang dituntut hukuman    tahun '
+sentence215 = 'empat ekor kukang jawa dilepasliarkan di garut '
+sentence216 = 'ucil si kukang obesitas '
+sentence217 = 'komodo   orangutan   hingga kukang   mengapa perdagangan satwa langka terus terjadi  '
+sentence218 = 'tiga kukang dilepasliarkan di kawasan kamojang garut '
+sentence219 = 'kukang jawa dan owa jawa kritis   hampir punah'
+sentence220 = 'ibu rumah tangga selamatkan kukang berlumuran darah   tangan dan kaki kiri putus   begini kondisinya'
+sentence221 = 'hari kebebasan si kukang albino '
+sentence222 = '      ekor kukang jawa kembali hidup bebas di hutan gunung halimun salak'
+sentence223 = 'delapan ekor kukang diamankan di pasar hewan palembang '
+sentence224 = '   kukang jawa dilepasliarkan di hutan kamojang garut'
+sentence225 = 'perbedaan kuskus dan kukang '
+sentence226 = 'aslan si kukang gunung salak '
+sentence227 = 'call center bbksda sumut terima kukang sumatera '
+sentence228 = 'karena pelihara kukang   warga cianjur ditindak petugas '
+sentence229 = 'arti motif wajah pada kukang jawa '
+sentence230 = '     individu kukang sumatera bersiap pulang ke habitatnya '
+sentence231 = 'kukang nyasar ke halaman rumah   lapor ke bbksda jawa barat '
+sentence232 = 'habitat baru      individu kukang sumatera '
+sentence233 = 'delapan ekor kukang diamankan di pasar hewan palembang '
+sentence234 = 'delapan ekor kukang diamankan di pasar hewan palembang '
+sentence235 = 'habitat baru untuk ucil dan      kukang sumatera '
+sentence236 = 'kukang jawa yang terancam punah dikembalikan ke habitatnya'
+sentence237 = 'memburu minyak pelet dan syarat mistis bikin nasib kukang di ujung tanduk '
+sentence238 = 'jangan main main   pedagang kukang bisa dituntut    tahun penjara '
+sentence239 = 'seorang penjual kukang dituntut    tahun penjara '
+sentence240 = 'pelepasliaran kukang jawa sm gunung sawal '
+sentence241 = 'pertamina bantu pelepasliaran kukang jawa'
+sentence242 = 'bbksda jawa barat menerima kukang jawa serahan warga subang '
+sentence243 = '     kukang jawa akhirnya dilepasliarkan di gunung sawal '
+sentence244 = 'bupati sanggau sepakat hentikan perburuan kukang dan kurangi penggunaan botol plastik '
+sentence245 = 'bbksda riau memberi apresiasi kepada sobat konservasi '
+sentence246 = 'alobi foundation dan bksda sumsel lepasliarkan kukang bangka '
+sentence247 = 'mengantar kepulangan      kukang jawa '
+sentence248 = 'polda sumsel berhasil gagalkan perdagangan kukang di pasar      ilir palembang '
+sentence249 = 'meli si kukang yatim piatu '
+sentence250 = '     ekor kukang jawa dilepasliarkan di tampomas '
+sentence251 = 'wahid   pasien kukang pertama di tahun          '
+sentence252 = 'dua satwa dilindungi pulang ke rumah '
+sentence253 = 'masyarakat mitra polhut serahkan roy ke balai tn kayan mentarang '
+sentence254 = 'bksda jambi lepasliarkan kukang hasil buruan '
+sentence255 = 'suami menganggur   ibu    anak nekat jual satwa dilindungi di palembang '
+sentence256 = 'kukang jawa dan owa jawa kritis   hampir punah '
+sentence257 = 'empat hewan dilindungi diserahkan warga ke bbksda jabar '
+sentence258 = 'sejumlah satwa liar dilepasliarkan '
+sentence259 = 'profauna sesalkan tingginya pemburuan satwa liar di kondang iwak kabupaten malang'
+sentence260 = 'kembalinya kukang muka geni ke hutan talaga bodas garut'
+sentence261 = 'satu satunya primata punya bisa'
+sentence262 = 'pelepasliaran kukang jawa'
+sentence263 = 'edukasi satwa dilindungi bagi paud di skw ii '
+sentence264 = 'balai besar ksda sumatera utara peringati hari keanekaragaman hayati          '
+sentence265 = 'bersama ditreskrimsus polda diy   bksda yogyakarta lakukan pengamanan dan penertiban kepemilikan satwa liar '
+sentence266 = 'alby kini hidup liar di bukit barisan selatan'
+sentence267 = 'foto profauna indonesia ajak masyarakat hentikan perburuan primata'
+sentence268 = 'kukang ditemukan penuh luka di sukabumi   diduga bekas tembakan senapan angin '
+sentence269 = 'seorang ibu ditangkap menjual hewan kukang yang dilindungi'
+sentence270 = 'foto bksda aceh lepas liar dua satwa dilindungi '
+sentence271 = 'edukasi satwa dilindungi bagi paud di skw ii'
+sentence272 = 'perburuan satwa liar di kondang iwak   kabupaten malang masih tinggi '
+sentence273 = 'terancam punah        primata kukang jawa dilepasliarkan di hutan gunung halimun salak '
+sentence274 = 'selamatkan populasi dan habitat kukang   mulai dari sekarang '
+sentence275 = 'menjaga kelestarian bentang alam batutegi '
+sentence276 = 'kekah   presbytis natunae      satwa endemik pulau natuna yang terancam punah '
+sentence277 = 'kukang   si mungil manja dan    fakta unik tentangnya '
+sentence278 = 'dikandangkan warga   kukang kalimantan dilepasliarkan di hutan tapin '
+sentence279 = 'membantu sang raja hutan di habitat guntur papandayan'
+sentence280 = 'foto   pelepasliaran      individu kukang jawa di taman nasional halimun salak'
+sentence281 = 'bksda banten amankan empat ekor hewan dilindungi dari pedagang online '
+sentence282 = 'mentilin   fauna identitas bangka belitung yang terancam punah'
+sentence283 = 'kukang kalimantan diserahkan ke bksda '
+sentence284 = 'penyelamatan hewan dilindungi '
+sentence285 = 'keberadaan kukang makin terancam '
+sentence286 = 'mewaspadai perdagangan ilegal kukang di media sosial'
+sentence287 = 'seekor bayi kukang diserahkan ke bbksda riau   ditemukan saat membuka perkebunan di perbatasan'
+sentence288 = 'terlihat menggemaskan   gigitan kukang asal indonesia ini beracun dan mematikan  '
+sentence289 = 'taman satwa tanpa izin di kalimantan barat ditertibkan   pengelolanya ditetapkan tersangka'
+sentence290 = 'warga sukabumi ini pingsan usai digigit kukang   ternyata ini bahaya racun satwa ini menurut dokter'
+sentence291 = 'jual beli satwa dilindungi dibongkar   dibanderol hingga rp    juta per ekor'
+sentence292 = 'kopi kang dan budidaya maggot   upaya unik warga jawa barat jaga kelestarian lingkungan '
+sentence293 = 'satwa dilindungi dilepasliarkan ke twa danau sicike'
+sentence294 = 'intip pusat rehabilitasi harimau sumatra di tambling lampung '
+sentence295 = 'tertangkap kamera   badak bercula satu mandi laut di tn ujungkulon '
+sentence296 = 'hewan dan tumbuhan langka di indonesia'
+sentence297 = 'ditemukan di atas pohon seekor kukang berhasil dievakuasi warga'
+sentence298 = 'berbahaya jangan pelihara kukang'
+sentence299 = 'gigit warga hingga pingsan   kukang jawa dievakuasi ke ppcs'
+sentence300 = 'nikmatnya seruput kopi kang di tengah habitat kukang '
+sentence301 = 'warga sukabumi tak sadarkan diri setelah digigit kukang   dokter jelaskan bahaya racun satwa ini'
+sentence302 = 'kukang kalimantan diserahkan ke bksda '
+sentence303 = '   penjual hewan langka di batu ditangkap   seekor kukang jawa dan kadal panana diamankan'
+sentence304 = 'warga serahkan seekor kukang ke bksda '
+sentence305 = 'ditemukan warga baros sukabumi   seekor kukang kembali hidup bebas di gunung beser '
+sentence306 = 'hati hati      hewan mamalia ini ternyata beracun padahal penampilannya lucu dan menggemaskan '
+sentence307 = 'bksda banten amankan seekor kukang jawa yang dipelihara warga'
+sentence308 = 'hewan peliharaan yang ilegal di amerika serikat'
+sentence309 = 'bidang ksda ciamis amankan buaya muara penyerahan dari warga'
+sentence310 = 'satwa langka masih betah   curug cijengkol jadi taman bumi di cidadap sukabumi'
+sentence311 = 'bksda jambi rehabilitasi puluhan hewan di pusat transit dan penyelamatan satwa '
+sentence312 = 'berharap bentang alam gunung mangkol tidak kritis lagi'
+sentence313 = 'tujuh lutung jawa   susul        koleganya'
+sentence314 = 'mengapa banyak spesies terancam punah yang terabaikan dunia '
+sentence315 = 'bunga rafflesia tuan mudae mekar di cagar alam maninjau agam '
+sentence316 = '     hewan lucu yang sebenarnya sangat bahaya dan bisa bunuh manusia'
+sentence317 = 'perlindungan ekosistem hutan batang toru terus didorong '
+sentence318 = 'sindikat perdagangan hewan langka dilindungi di jawa timur dibongkar'
+sentence319 = '   jantan dan    betina lutung jawa dilepasliarkan di hutan coban talun'
+sentence320 = 'bksda jambi lepas liarkan      ekor satwa dilindungi '
+sentence321 = 'bksda edarkan brosur daftar satwa dilindungi cegah perdagangan ilegal '
+sentence322 = 'ancaman denda hingga rp       juta   satwa mamalia yang langka dan dilindungi ini tak boleh diburu di hutan riau'
+sentence323 = 'tersangka kepemilikan belasan satwa dilindungi   taman satwa tak berizin seret nama panji petualang'
+sentence324 = 'terlihat menggemaskan        hewan ini ternyata berbahaya'
+sentence325 = 'populasi lutung jawa di gunung biru cenderung bertambah '
+sentence326 = 'polda kalsel ungkap jual beli satwa dilindungi'
+sentence327 = 'satwa endemik bangka mentilin dilepasliarkan ke kawasan taman hutan raya menumbing'
+sentence328 = 'mengungkap jalur sutra dan bisnis gelap burung kicau di sumatera  '
+sentence329 = '   aktivitas seru di twa sibolangit   lihat rangkong dan trenggiling  '
+sentence330 = 'beredar video oknum kapolres di riau diduga mengadu owa dengan anjing'
+sentence331 = 'kisah relawan terumbu karang yang    bulan terjebak di pulau terpencil akibat lockdown   bertahan hidup berdampingan dengan hewan hewan liar dan sering kelaparan '
+sentence332 = 'pola tidur kukang jawa dipengaruhi oleh cahaya dan suhu di sekitarnya '
+sentence333 = 'warga cianjur temukan seekor kukang di halaman rumah'
+sentence334 = '     kukang sumatera pulang kembali ke habitatnya tepat di hari bhakti rimbawan '
+sentence335 = 'pecinta satwa serahkan kukang jawa ke bbksda jabar '
+sentence336 = 'foto mengantar kukang pulang ke rumahnya'
+sentence337 = 'si malu malu masih berkeliaran di jaringan kabel listrik pln '
+sentence338 = 'pelepasliaran kukang di cagar alam pararawen i dan ii '
+sentence339 = 'warga temukan seekor kukang yang ditemuinya ke ppsc'
+sentence340 = 'hati wendi prameswari tidak bisa berpaling dari kukang'
+sentence341 = 'pelepasliaran kukang di twa pulau burung dan pulau suwangi skw    '
+sentence342 = 'warga serahkan kukang hewan yang dilindungi ke pmi '
+sentence343 = 'dua ekor kukang diserahkan warga ke bksda garut '
+sentence344 = 'bbksda sumut lepasliarkan kukang di hutan lindung batang toru '
+sentence345 = '     individu kukang jawa kembali ke habitatnya di tnghs '
+sentence346 = 'warga desa aur gading selamatkan satwa yang dilindungi '
+sentence347 = 'sering berkelahi antarsesama   populasi kukang jawa makin terancam'
+sentence348 = 'melihat proses pelepasliaran kukang jawa di gunung salak'
+sentence349 = 'memprihatinkan jual beli kukang marak di medsos '
+sentence350 = 'nikmatnya seruput kopi kang di tengah habitat kukang'
+sentence351 = 'pingsan digigit kukang '
+sentence352 = 'memberi makan kukang '
+sentence353 = 'kukang dan elang brontok dilepasliarkan di bengkulu'
+sentence354 = 'kasihan kukang jatuh dari pohon   warga segera serahkan pada petugas '
+sentence355 = 'dipelihara tetangga   kukang kurus akhirnya diserahkan secara sukarela '
+sentence356 = 'pertamina berdayakan petani kopi di wilayah konservasi kukang garut'
+sentence357 = 'kukang dan elang brontok dilepasliarkan '
+sentence358 = 'pelepasliaran kukang  nycticebus menagensis  di twa pulau burung dan pulau suwangi skw   '
+sentence359 = '     kukang jawa dilepasliarkan di taman nasional gunung halimun salak'
+sentence360 = 'pelepasliaran kukang jawa di taman nasional halimun salak '
+sentence361 = 'polisi tangkap penjual kukang jawa '
+sentence362 = 'pelepasliaran kukang jawa '
+sentence363 = 'induk dan anak kukang berhasil diamankan bksda banten dari pedagang online '
+sentence364 = 'warga aceh tengah serahkan elang hitam dan kukang ke bksda'
+sentence365 = 'oces      apa kabar kukang  '
+sentence366 = 'akhir pengembaraan ibu dan anak kukang di garut '
+sentence367 = 'berawal dari owa mati   kukang buaya dievakuasi dari rumah kapolres pelalawan'
+sentence368 = 'perjuangan meli untuk mendapatkan kesempatan kembali ke alam bebas '
+sentence369 = 'foto pelepasliaran kukang jawa di taman nasional halimun salak'
+sentence370 = 'kisah pemburu harimau sumatra ketiban sial saat jual kukang '
+sentence371 = 'tiga penyerahan satwa liar kepada bbksda sumut '
+sentence372 = 'bksda kalteng lepasliar kukang ke cagar alam pararawen '
+sentence373 = 'bksda kalteng terima kukang serahan warga '
+sentence374 = 'kukang yang semakin terkekang  alamsemenit '
+sentence375 = 'fakta fakta unik tentang kukang hewan menggemaskan yang terancam punah '
+sentence376 = 'satu ekor kukang jawa diserahkan warga '
+sentence377 = 'bbksda sumut lepas      ekor satwa liar di twa sicike cike '
+sentence378 = 'si mata belo yang terancam punah'
+sentence379 = 'potret pelepasliaran kukang jawa di gunung salak'
+sentence380 = 'warga pingsan digigit kukang liar '
+sentence381 = 'foto melihat perawatan meli   bayi kukang tanpa induk '
+sentence382 = '     ekor kukang jawa kembali ke habitat aslinya di tnghs'
+sentence383 = 'kilas balik kami di          '
+sentence384 = 'penyelamatan hewan dilindungi'
+sentence385 = 'pelepasliaran kukang jawa di taman nasional halimun salak '
+sentence386 = 'ksda ciamis amankan satwa dilindungi '
+sentence387 = 'mengawal sang primata kembali ke habitatnya'
+sentence388 = 'foto  terlihat menggemaskan   gigitan kukang asal indonesia ini beracun dan mematikan'
+sentence389 = 'gakkum klhk sita      ekor satwa dilindungi dari taman satwa illegal dan tetapkan seorang tersangka'
+sentence390 = 'mengenal slow loris alias kukang   hewan yang dilindungi undang'
+sentence391 = 'balai ksda jambi pelepasliaran satwa bersama direktorat kkh dan bbtn kerinci seblat '
+sentence392 = 'foto pengobatan kukang yang terluka di aceh '
+sentence393 = 'penyelamatan meli   bayi kukang tanpa induk'
+sentence394 = 'mengintip perawatan bayi kukang di klinik satwa bbksda riau '
+sentence395 = 'seekor kukang jawa temuan dilepasliarkan '
+sentence396 = 'kukang jawa   primata imut yang semakin langka'
+sentence397 = 'warga sukabumi ini pingsan usai digigit kukang   ternyata ini bahaya racun satwa ini menurut dokter'
+sentence398 = 'diduga tersesat di permukiman   kukang kalimantan berhasil dievakuasi '
+sentence399 = 'bksda sumut lepas burung dan kukang di twa danau sicike cike'
+sentence400 = 'seekor kukang  beye angin  diserahkan ke bksda '
+sentence401 = 'mengenal kukang jawa   spesies kukang terbesar di indonesia'
+sentence402 = 'bksda lepas liarkan lima satwa dilindungi di hutan aceh '
+sentence403 = '   ekor kukang korban penyelundupan kini hidup bebas di habitatnya '
+sentence404 = 'ipb      spesies primata di indonesia kemungkinan punah pada          '
+sentence405 = 'berkas lengkap   kasus perdagangan kukang di agam dilimpahkan ke kejaksaan'
+sentence406 = 'melihat pelepasliaran kukang jawa di gunung ciremai   satwa yang terancam punah'
+sentence407 = 'polisi kepulauan meranti tangkap pria pemelihara kukang '
+sentence408 = 'kukang   binturong   dan buaya diperdagangkan lewat facebook '
+sentence409 = 'santri darussadah selamatkan bue angen '
+sentence410 = 'cerita warga tasik soal kukang yang awalnya dikira kucing '
+sentence411 = '     hewan langka pemalu menggemaskan tapi beracun bakal dilepasliarkan di hutan ciamis'
+sentence412 = 'santri di aceh timur temukan kukang '
+sentence413 = 'kukang di pantai minajaya sukabumi      satwa pulau jawa yang terancam punah '
+sentence414 = 'kukang jawa di kawasan pegunungan sawal ciamis mulai punah '
+sentence415 = 'kondisi memprihatinkan   kukang jawa yang dikira kucing akan direhab'
+sentence416 = 'empat kukang dan dua musang dilepasliarkan di hutan bangka '
+sentence417 = '   satwa yang dilindungi dikembalikan ke habitatnya di sumsel'
+sentence418 = 'dikira kucing   hewan langka kukang jawa tertangkap warga di tasikmalaya   lemas dan luka'
+sentence419 = 'jarang terjadi   orang utan terekam makan kukang   ini hasil penelitian unas'
+sentence420 = 'setelah jalani perawatan   delapan ekor kukang dilepasliarkan di hutan konservasi'
+sentence421 = 'kenali      spesies primata asli nusantara yang dilindungi '
+sentence422 = '   primata langka sitaan di jakarta dibawa ke bangka   ini daftarnya'
+sentence423 = '   hewan paling bau di dunia  '
+sentence424 = 'membaca hubungan masyarakat bangka belitung dengan alam melalui sastra lisan'
+sentence425 = '   satwa dilindungi dilepasliarkan ke kawasan suaka margasatwa padang sugihan   banyuasin'
+sentence426 = 'akhir kasus penyelundupan satwa langka kukang di sumbar   pelaku dihukum        tahun penjara      kukang dilepasliarkan  '
+sentence427 = 'tiga kukang dari ciamis dikirim ke pusat rehabilitasi bogor   dua satwa dilindungi ini terluka'
+sentence428 = 'elang   alap alap   dan kukang dilepas ke alam untuk peringati hcpsn '
+sentence429 = 'sempat dikira musang   kukang temuan warga di pekarangan diserahkan ke bksda sumbar'
+sentence430 = 'elang ular bido   alap alap besra dan kukang jawa dilepasliarkan di tnghs bogor'
+sentence431 = 'catatan akhir tahun dinarasikan  harta karun    eksploitasi mineral di kepulauan bangka belitung berlanjut'
+sentence432 = 'potret pelepasliaran kucing akar   kukang hingga binturong di siranggas'
+sentence433 = 'seekor tapir yang dilepasliarkan bksda ditemukan di jalan raya   videonya viral  '
+sentence434 = 'perlukah perkebunan sawit di malang '
+sentence435 = 'jarang terjadi   orangutan membunuh kukang lalu memakannya   terjadi di kalimantan tengah'
+sentence436 = 'pertama kali   orangutan tertangkap kamera membunuh dan memakan kukang  '
+sentence437 = '   fauna pulau jawa yang hampir punah  '
+sentence438 = 'gunung gede pangrango   tempat sakral bagi masyarakat sunda dalam catatan bujangga manik'
+sentence439 = 'mengenal kukang jawa   salah satu satwa yang dilindungi'
+sentence440 = 'mengulik ragam fauna khas pulau jawa   ini    jenis hewan yang dilindungi dan nyaris punah '
+sentence441 = 'bksda sumbar lepas liarkan    kukang dan    elang di cagar alam maninjau   satwa diserahkan warga'
+sentence442 = 'bksda sumbar lepasliarkan    ekor kukang di kawasan hutan konservasi cagar alam maninjau'
+sentence443 = '   ekor kukang yang ditemukan di tiang listrik diserahkan ke bksda agam'
+sentence444 = 'patroli cyber lacak transaksi ilegal   sita kukang jawa   binturong dan buaya'
+sentence445 = 'polresta yogyakarta gagalkan jual beli satwa dilindungi   ada buaya muara dan kukang jawa'
+sentence446 = 'tangkap dan simpan kukang di rumah   warga riau ditangkap polisi'
+sentence447 = 'resor konservasi wilayah      aceh utara lepasliarkan kukang yang ditemukan warga'
+sentence448 = 'terlihat lucu dan menggemaskan   kukang ternyata punya gigitan yang beracun ini    fakta lainnya '
+sentence449 = 'tujuh owa dan kukang sumatera jalani rehabilitasi di bangka '
+sentence450 = 'orang utan makan kukang manifestasi evolusi   perubahan lingkungan'
+sentence451 = 'bksda kalbar lepas liarkan kukang   primata imut yang bergerak lambat  '
+sentence452 = 'pelepasliaran elang dan kukang ke hutan cagar alam maninjau '
+sentence453 = 'viral leletnya kukang menyeberang jalan   netizen pengin gue gendong biar cepat'
+sentence454 = 'foto melihat owa dan kukang jawa dilepas di hutan jantho '
+sentence455 = 'balai tn gunung halimun salak lepasliarkan elang   alap alap   dan kukang peringati hcpsn '
+sentence456 = 'hewan kukang bikin listrik pemukiman warga di bintan padam'
+sentence457 = 'hari kukang international simak fakta unik hewan yang tiga kali lebih kuat dari manusia ini'
+sentence458 = 'bksda kerahkan tim siber untuk mengatasi perdagangan satwa dilindungi '
+sentence459 = 'lindungi satwa liar        kukang jawa dilepas di cagar alam situ lengkong panjalu ciamis '
+sentence460 = 'komunitas samudra dumai selamatkan dua ekor kukang'
+sentence461 = 'gangguan jaringan karena binatang hingga kendala mov pltu berau '
+sentence462 = 'sedihnya   lima anak lutung jawa sitaan itu mati'
+sentence463 = 'pt timah   alobi bangka lepasliarkan enam ekor satwa langka '
+sentence464 = 'mengenal garis pemisah fauna indonesia timur dan tengah'
+sentence465 = 'persebaran fauna di indonesia bagian barat dan tengah'
+sentence466 = 'pemadaman diluar kendali pln '
+sentence467 = 'ratusan satwa dilindungi dilepasliarkan selama periode januari juli   begini penjelasannya '
+sentence468 = 'kembalikan burung merak ke habitat asli'
+sentence469 = 'ini penyebabnya listrik di kelurahan sei lekop dan gunung lengkuas padam'
+sentence470 = 'sepanjang            bksda jambi telah lepasliarkan ribuan satwa ke habibat aslinya'
+sentence471 = 'aeer pltu batu bara ancam gajah dan harimau sumatra '
+sentence472 = 'maraknya pengguna senapan gas di babel mengancam kepunahan satwa '
+sentence473 = 'pelihara primata buat pamer di medsos nggak semenyenangkan itu '
+sentence474 = '   hewan yang memiliki sifat pemalu dan mulai langka   ada pika hingga tapir'
+sentence475 = 'ksda agam catat      konflik manusia dan hewan di          '
+sentence476 = 'viral kukang terdampar diselamatkan warga   tersenyum seakan terima kasih ke penyelamat '
+sentence477 = 'warga serang serahkan burung kakatua jambul kuning ke bksda'
+sentence478 = 'manfaat hewan kukang pada serat centhini   bisa atasi perut kembung'
+sentence479 = '   satwa dilindungi dilepasliarkan di hutan biologi universitas andalas'
+sentence480 = 'bksda riau lepasliarkan    elang dilindungi dan      jalak kebo di inhil'
+sentence481 = 'alas petungkriyono di simpang jalan '
+sentence482 = 'kukang dalam bahaya perdagangan kotor dengan kera selundupan '
+sentence483 = 'pantai bandealit jember jadi surga bagi pecinta fotografi '
+sentence484 = 'fakta unik hewan kukang yang imut dan menggemaskan '
+sentence485 = 'mengenal    jenis kucing terbesar di planet bumi'
+sentence486 = '   hewan menggemaskan yang ternyata kejam   gak nyangka'
+sentence487 = '     hutan keramat di ciamis ditetapkan jadi kee   apa dan kenapa di hutan keramat   simak penjelasannya'
+sentence488 = 'hutan desa bukit bamba berpotensi sebagai hutan penelitian '
+sentence489 = 'keterlibatan generasi muda untuk pelestarian keanekaragaman hayati '
+sentence490 = 'geliat ekowisata di tengah pandemi covid'
+sentence491 = 'laporan iucn            indonesia punya        fauna kritis terancam punah        spesies adalah mamalia'
+sentence492 = 'teror senapan angin terhadap perlindungan satwa  '
+sentence493 = 'itinerary seharian wisata di banjarnegara jateng   main ke desa wisata  '
+sentence494 = '     hewan lucu tapi bisa berbahaya   jangan dipelihara'
+sentence495 = 'lahan bekas tambang di babel disulap jadi tempat konservasi'
+sentence496 = 'sujud syukur      napi   merdeka dari lapas bulak bekasi berkat remisi hut ke'
+sentence497 = 'hari konservasi kehidupan liar sedunia   yuk intip    kawasan konservasi di indonesia  '
+sentence498 = 'desa pelangas siap sajikan wisata edukatif geosite dan budaya kearifan lokal'
+sentence499 = '   fakta kukang   si primata pemalu bermata bulan '
+sentence500 = 'apa yang bisa kamu lakukan apabila menemukan kukang di daerahmu  '
+sentence501 = 'disebut hewan muka   beragamnya nama panggilan kukang '
+sentence502 = 'kukang api   satwa mistis yang dipercaya tahan api '
+sentence503 = 'kukang   satwa yang dilindungi beserta beberapa jenis satwa lainnya kembali ke habitatnya '
+sentence504 = 'berbeda jenis   inilah perbedaan kukang   kungkang dan kuskus '
+sentence505 = 'termasuk pemakan segala   apa saja sih makanan kukang  '
+sentence506 = 'dilabeli hama dan pembawa sial   nyatanya kukang penting bagi ekosistem '
+sentence507 = 'mitos kukang   dari media sihir hingga satwa pembawa sial '
+sentence508 = 'kukang jawa kembali menjadi penghuni baru kawasan taman nasional gunung ciremai '
+sentence509 = 'kenapa kukang bergerak dengan lambat  '
+sentence510 = 'kukang lebih pilih tidur siang demi hindari saingan '
+sentence511 = 'studi terbaru   peneliti temukan orangutan kalimantan makan kukang'
+sentence512 = 'tau gak sih  anak kukang belajar bela diri dengan bermain '
+sentence513 = 'aktif di malam hari mata kukang glow in the dark  '
+sentence514 = 'ada apa dengan kukang dan kabel listrik  '
+sentence515 = 'perdagangan kukang jawa buaya secara online dibongkar polisi'
+sentence516 = 'pelepasan satwa kukang barang bukti kejahatan perdagangan satwa '
+sentence517 = 'mengenal kukang   si malu malu yang kini nasibnya terancam punah '
+sentence518 = 'bksda jateng lepasliarkan kukang jawa di hutan alam temanggung '
+sentence519 = 'bbksda riau observasi kukang hasil tangkapan polda riau '
+sentence520 = 'pelepasliaran kukang sumatera di tn bukit barisan selatan '
+sentence521 = 'jangan coba coba manangkap dan pelihara kukang kalau tak ingin berakhir di penjara '
+sentence522 = 'peringati hcpsn            klhk lepasliarkan elang dan kukang jawa di tnghs '
+sentence523 = 'kukang liar di pemukiman warga diselamatkan dan dilepasliarkan ke habitatnya '
+sentence524 = 'menyelamatkan suga si kukang '
+sentence525 = 'disebut satwa berbahaya   gigitan kukang bisa bikin pingsan '
+sentence526 = 'hewan kukang jawa   masuk rumah warga di rajapolah '
+sentence527 = 'kukang hasil sitaan ditreskrimsus polda riau dilepas liarkan '
+sentence528 = 'kukang   satu satunya primata di dunia yang berbisa'
+sentence529 = 'demi pertahankan wilayah dan keluarga   kukang tega serang sesama '
+sentence530 = 'mirip manusia   induk kukang juga bisa parkir  '
+sentence531 = '     tahun lagi kukang punah kalau hal ini masih terjadi '
+sentence532 = 'momen      kukang jawa dilepasliarkan ke habitat'
+sentence533 = 'albinisme pada kukang dan kerumitannya dalam perlindungan hewan'
+sentence534 = 'penemuan satwa liar kukang di rumah warga oleh komunitas samudra kota dumai'
+sentence535 = 'melihat pelepasliaran    ekor kukang di cagar alam nusa gede panjalu ciamis'
+sentence536 = 'penangkaran kukang untuk komersial   bisa kah  '
+sentence537 = ' peringati hcpsn            klhk lepasliarkan elang dan kukang jawa di tnghs'
+sentence538 = 'kenali    spesies kukang satwa dilindungi di indonesia'
+sentence539 = 'perhutani perhutani bersama bksda jateng lepasliarkan kukang jawa di kawasan has temanggung '
+sentence540 = 'hendak jual kukang   pria di sumbar ditangkap polisi petugas bksda'
+sentence541 = 'seekor kukang sumatera dilepasliarkan ke habitatnya di aceh utara'
+sentence542 = 'berbeda jenis   inilah perbedaan kukang   kungkang dan kuskus'
+sentence543 = 'terancam punah              kukang dijajakan secara daring '
+sentence544 = 'buah buahan manis bisa rusak gigi kukang '
+sentence545 = 'pertamina ajak masyarakat dukung pelestarian kukang jawa '
+sentence546 = '   pemuda jual kukang dari sumatera barat rp    juta per ekor di pekanbaru'
+sentence547 = 'bbksda lepas tiga kukang jawa di gunung guntur garut '
+sentence548 = 'vlog    mencari kukang di malam hari '
+sentence549 = 'bbksda sumatera utara lepasliar kukang penyerahan warga batang angkola '
+sentence550 = ' bksda jateng lepasliarkan kukang jawa di hutan alam temanggung'
+sentence551 = 'lfp merawat habitat kukang di cisurupan   warga diedukasi untuk menyayangi dan melindungi kukang '
+sentence552 = 'bksda jateng lepas liarkan  kukang jawa di temanggung'
+sentence553 = 'lindungi dan sayangi kukang di hari hak asasi hewan '
+sentence554 = 'bksda jateng lepasliarkan kukang jawa di hutan temanggung'
+sentence555 = 'pelepasliaran kukang jawa di cagar alam nusa gede panjalu '
+sentence556 = 'peneliti  kukang jawa diperkirakan punah di tahun          '
+sentence557 = 'perhutani jaga kelestarian   perhutani bandung selatan serahkan kukang kepada bbksda jawa barat '
+sentence558 = 'warga tasikmalaya selamatkan kukang jawa dari permukiman'
+sentence559 = 'peringati hari primata   kukang dan musang dilepasliarkan di hutan konservasi '
+sentence560 = 'perhutani perhutani bersama kementerian lhk lepasliarkan kukang jawa di cagar alam dan kawasan ekosistem esensial '
+sentence561 = 'bleaching kukang fenomena suram di balik kejamnya perdagangan satwa '
+sentence562 = 'seekor bayi kukang diserahkan warga ke bbksda jabar '
+sentence563 = 'kukang sumatera dilepasliarkan di suaka margasatwa '
+sentence564 = 'bksda aceh lepasliarkan kukang sumatera ke habitatnya '
+sentence565 = 'jagger buta karena senapan angin'
+sentence566 = '   fakta menarik tentang kukang   primata imut yang pemalu '
+sentence567 = 'pria di meranti ini ditahan polisi karena menangkap dan memelihara seekor kukang '
+sentence568 = 'mengenal    satwa nokturnal di indonesia '
+sentence569 = 'peneliti unas temukan orangutan kalimantan makan kukang'
+sentence570 = 'nyaris punah   kukang jawa ditemukan warga di kampung cempaka warna'
+sentence571 = 'empat kukang dan dua musang dilepasliarkan di hutan bangka'
+sentence572 = 'pelepas liaran satwa liar dilindungi jenis kukang dan trenggiling '
+sentence573 = 'balai besar tana bentarum rilis kukang hasil laporan ibu jamilah '
+sentence574 = ' bksda jakarta translokasikan    ekor primata dilindungi ke pps alobi binaan bksda sumsel'
+sentence575 = ' klhk lepasliarkan satwa dilindungi dan restocking satwa hasil penangkaran di jambi'
+sentence576 = 'kukang   bersama satwa lainnya kembali ke habitatnya '
+sentence577 = 'pelepasliaran dan restocking satwa hasil penangkaran di jambi '
+sentence578 = 'bbksda jawa timur bersama pusat rehabilitasi lutung jawa lepasliarkan    ekor lutung budeng'
+sentence579 = ' peringati hari hewan sedunia   bksda sumsel lepasliarkan    jenis satwa dilindungi di sm padang sugihan'
+sentence580 = 'road to hkan            balai ksda kalsel lakukan pelepasliaran dan penitipan satwa di lk jhonlin lestari '
+sentence581 = 'peringati hari hewan sedunia    bksda sumsel lepasliarkan    jenis satwa dilindungi di sm padang sugihan '
+sentence582 = 'peringati hari hewan sedunia bksda sumsel lepasliarkan    jenis satwa dilindungi di sm padang sugihan'
+sentence583 = 'pelepasliaran satwa dilindungi di aceh'
+sentence584 = 'delapan ekor kukang dilepasliarkan ke hutan konservasi bbksda riau'
+sentence585 = 'bksda jambi lepasliarkan kukang dan owa serahan warga '
+sentence586 = 'cara unik masyarakat pulau bangka menjaga kelestarian satwa liar'
+sentence587 = 'dua pedagang kukang dan sisik trenggiling ditangkap klhk '
+sentence588 = 'bksda kembali lepas hewan liar sumatera'
+sentence589 = 'bksda sumsel lepasliarkan delapan satwa dilindungi '
+sentence590 = 'kukang jawa dilepasliarkan di tn gunung halimun salak '
+sentence591 = '   ekor satwa dilindungi dilepasliarkan di hutan cagar alam maninjau '
+sentence592 = '   satwa liar endemik di pulau jawa yang terancam punah '
+sentence593 = 'kukang dan trenggiling dilepasliarkan oleh bksda sumbar '
+sentence594 = 'bksda bengkulu lepasliarkan kukang ke habitatnya '
+sentence595 = '     kukang jawa dilepasliarkan di suaka margasatwa cikepuh '
+sentence596 = 'kukang dan elang dilepasliarkan di cagar alam maninjau '
+sentence597 = 'alobi lepasliarkan empat kukang   dua musang ke hutan bangka '
+sentence598 = 'kucing hutan terdampak banjir dilepas liarkan di tahura sultan adam'
+sentence599 = ' peringati hari primata indonesia      ekor kukang bangka  nycticebus bancanus  kembali ke  rumah '
+sentence600 = ' bksda sumsel evakuasi satwa dilindungi jenis kukang'
+sentence601 = 'kelekak    rumah terakhir  kukang bangka yang terancam punah'
+sentence602 = 'balai besar tnggp lepasliarkan kukang jawa di taman nasional '
+sentence603 = 'mengenal kukang jawa   salah satu primata yang dilindungi di indonesia '
+sentence604 = 'bksda jabar lepas liarkan    kukang sumatera di hutan lindung batutegi'
+sentence605 = 'warga pasaman selamatkan satwa kukang di pinggir jalan raya '
+sentence606 = ' bksda sumbar lepasliarkan empat ekor kukang di cagar alam maninjau'
+sentence607 = '   fakta unik kukang   yang bayinya ditemukan warga di karangpara sukabumi '
+sentence608 = 'kehati berbagi sejumlah fakta untuk peringati hari primata indonesia '
+sentence609 = 'resor ksda maninjau selamatkan tujuh satwa langka dilindungi '
+sentence610 = 'warga padang pariaman serahkan kukang dan trenggiling ke bksda '
+sentence611 = 'hewan di mini zoo ternyata ilegal'
+sentence612 = 'kukang jawa dari gunung geulis terjebak lumpur sisa banjir sumedang'
+sentence613 = 'empat  ekor kukang dilepasliarkan di cagar alam maninjau sumbar  '
+sentence614 = 'tn gunung ciremai terima tujuh satwa dilindungi dari bksda dki jakarta '
+sentence615 = 'perbedaan kukang dan kungkang   banyak yang keliru membedakannya '
+sentence616 = 'dikenal menggemaskan   kukang ternyata miliki racun berbahaya  '
+sentence617 = 'jenis kukang yang salah satunya disebut primata berbisa di dunia  '
+sentence618 = 'bksda sumbar lepasliarkan seekor kukang yang ditemukan di pinggir jalan'
+sentence619 = 'empat kukang bangka dilepas ke alam bebas'
+sentence620 = 'hopeland camp   lokasi kamping favorit melihat elang jawa di gunung salak  '
+sentence621 = '   alasan gunung sanggabuana harus jadi taman nasional'
+sentence622 = '     ekor kukang jawa telah dilepasliarkan di gunung ciremai '
+sentence623 = 'banyak yang tak tahu   ini    hewan di indonesia yang suka begadang '
+sentence624 = 'bksda sumut lepasliarkan kukang   kucing emas dan kucing kuwuk ke twa sicike'
+sentence625 = 'hewan hewan paling lambat di dunia   apa saja '
+sentence626 = 'kukang dan teringgiling   dilepasliarkan ke hutan konservasi di bangka tengah'
+sentence627 = 'selama bulan juni   bksda sumbar terima enam satwa dilindungi dari warga'
+sentence628 = 'sepuluh ekor kukang jawa dilepasliarkan di cagar alam gunung simpang cianjur'
+sentence629 = 'pelepasliaran kukang sumatera '
+sentence630 = 'jualbelikan kukang   warga di agam ditangkap polisi '
+sentence631 = 'menjaga hutan melancarkan orang mapur menuju surga'
+sentence632 = 'hari monyet sedunia   ini      primata asal indonesia'
+sentence633 = 'indonesia butuh strategi khusus hentikan laju kepunahan primata'
+sentence634 = '   hewan langka di indonesia yang wajib dilindungi '
+sentence635 = 'lanskap adat   berpotensi menjadi wilayah konservasi di pulau bangka'
+sentence636 = '     satwa dan puspa yang hampir punah   ada surili hingga kantong semar'
+sentence637 = 'kukang terancam karena jaringan listrik   pln isolasi kabel'
+sentence638 = 'tim eksplorasi scf identifikasi        jenis burung dan    primata di pegunungan sanggabuana  '
+sentence639 = '   hewan endemik pulau jawa ini terancam punah   sebagian bisa ditemukan di sukabumi '
+sentence640 = 'kukang primata lucu dan menggemaskan membawanya pada bencana kepunahan'
+sentence641 = '   hewan dilindungi di taman nasional ujung kulon'
+sentence642 = 'ada apa saja di taman nasional gunung palung  '
+sentence643 = 'kukang jawa serahan warga cirebon dilepas di gunung ciremai'
+sentence644 = 'nelayan sukabumi temukan kukang liar bergelantung di kabel listrik'
+sentence645 = 'gipo   kukang liar yang ompong akibat perburuan liar'
+sentence646 = 'hewan apa itu kukang '
+sentence647 = 'tim gabungan tangkap penjual kukang di agam '
+sentence648 = 'seekor kukang dikembalikan ke habitatnya di gunung marapi '
+sentence649 = 'warga pundu temukam seekor kukang dan diserahkan ke bksda kotim'
+sentence650 = 'bayi kukang diselamatkan buruh pabrik di sukabumi   dievakuasi balai besar ksda jabar'
+sentence651 = 'winaya amati kukang di tengah hutan pinggiran kota garut   rela sendirian malam malam hingga menangis '
+sentence652 = 'hutan batutegi   rumah aman pelepasliaran kukang sumatera'
+sentence653 = 'kukang terancam jaringan listrik   ini solusi dari akademisi'
+sentence654 = 'sintesia animalia indonesia'
+sentence655 = 'fakta unik kukang   hewan yang bergerak lambat'
+sentence656 = 'polantas di sampit ini temukan kukang masuk halaman rumahnya'
+sentence657 = 'lirik lagu anak kukang yang berasal dari daerah sulawesi selatan'
+sentence658 = 'fakta menarik kukang   hewan menggemaskan yang terancam punah'
+sentence659 = 'kukang sitaan lepas liar di leuser   perdagangan ilegal satwa terus terjadi'
+sentence660 = 'pelepasliaran satwa   mengantar kukang kembali ke alam  '
+sentence661 = 'pt timah tbk dan alobi lepasliarkan empat kukang di kawasan bio '
+sentence662 = 'kukang nyaris tertabrak di pinggir jalan arah pangkalan bun   kondisi sehat langsung dilepasliarkan  '
+sentence663 = 'pelepasliaran empat ekor kukang di hari primata nasional '
+sentence664 = 'dipenuhi kesialan dan hidup miskin   segera larung    benda ini ke sungai'
+sentence665 = 'satwa penghuni tn gunung ciremai bertambah '
+sentence666 = 'pertamina resmikan cafe kopi kang program tjsl ft bandung group'
+sentence667 = 'hewan  pun  berpuasa'
+sentence668 = 'riset orang utan bersama separuh spesies primata indonesia akan punah pada          akibat perubahan iklim'
+sentence669 = 'pelihara satwa dilindungi   divonis sebulan dan denda rp  m'
+sentence670 = 'mengkubung yang tak lagi nyaman di hutan bangka belitung'
+sentence671 = 'ini dia    hewan darat yang ternyata jago berenang   ada gajah'
+sentence672 = 'fauna di wilayah asia tenggara'
+sentence673 = 'hasil riset orangutan dan separuh spesies primata indonesia terancam punah         '
+sentence674 = 'bagaimana mencegah gelombang kepunahan primata indonesia pada          mendatang '
+sentence675 = 'illegal wildlife trade   one health dan urgensi revisi uu nomor    tahun          '
+sentence676 = '   hewan menggemaskan yang bisa membunuh manusia'
+sentence677 = 'bikin minizoo berisi satwa dilindungi   pengelola rumah makan ditangkap polda diy'
+sentence678 = 'kukang di cadas pangeran   sumedang   mengenal hewan tersebut   benarkah diikuti hantu  '
+sentence679 = 'tradisi pemanfaatan hewan sebagai obat dalam naskah naskah jawa '
+sentence680 = 'jelajah bumn          habituasi satwa liar   upaya pt timah tak sekadar tanam pohon buat reklamasi '
+sentence681 = '   hewan di indonesia paling suka begadang   nomor    dikenal sangat licik  okezone travel'
+sentence682 = 'cerita bksda tasikmalaya selamatkan belasan satwa langka dari pedalaman '
+sentence683 = 'hari primata indonesia   memahami peran primata di alam dan upaya cegah kepunahan '
+sentence684 = 'sebanyak      individu orangutan berhasil dilepasliarkan '
+sentence685 = 'danone-aqua jalin kerja sama pelestarian tn gunung halimun salak'
+sentence686 = 'selamatkan primata indonesia'
+sentence687 = 'mari kenali dan sayangi primata indonesia yang unik dan endemik'
+sentence688 = 'mengenal ragam spesies kuskus endemik di alam liar sulawesi '
+sentence689 = 'hewan mamalia pengertian   ciri ciri   klasifikasi   dan contohnya'
+sentence690 = '   persebaran fauna di indonesia lengkap ciri ciri dan contohnya'
+sentence691 = 'bksda ingatkan warga agar tidak memelihara satwa '
+sentence692 = 'keanekaragaman fauna indonesia asiatis   australis   dan peralihan '
+sentence693 = 'sensasi kopi madu musong di pangkalpinang   seduhan nikmat dan sehat'
+sentence694 = 'yuk berpetualang di    objek wisata terpopuler sumatera utara  '
+sentence695 = 'lelaki didenda s            simpan sugar glider   kukang sunda terancam di pejabat'
+sentence696 = 'kampoeng reklamasi air jangkang   wisata eks tambang yang wajib kamu kunjungi di akhir pekan'
+sentence697 = 'mengenal    jenis orangutan   termasuk dalam hewan langka yang dilindungi di indonesia'
+sentence698 = 'kalteng dorong rungan kahayan jadi kawasan ekosistem esensial'
+sentence699 = 'mengenal della oktarina duta kukang sumatera   seorang pramugari   founder saya diet kantong plastik'
+sentence700 = 'awas jangan tertipu    hewan yang terlihat lucu dan menggemaskan tetapi sangat mematikan'
+sentence701 = 'kebun binatang ragunan   tempat wisata asyik nan mendidik murah meriah'
+sentence702 = 'ciri ciri dan contoh hewan berdasarkan makanannya'
+sentence703 = 'macan dahan langka tertangkap kamera di areal konservasi wilmar'
+sentence704 = 'merawat ujung kulon   merawat kehidupan '
+sentence705 = 'pengertian hewan mamalia   ciri ciri beserta contohnya'
+sentence706 = 'pesona pulau sempu yang penuh keindahan tapi terlarang bagi wisatawan '
+sentence707 = 'pencinta alam hiwapatala aceh sukses mendaki puncak hulumasen aceh jaya'
+sentence708 = 'rencana pembangunan jalan tol soreang ciwidey pangalengan mengancam cekungan bandung '
+sentence709 = 'fosil daun mengungkapkan ekosistem kalimantan    juta tahun lalu'
+sentence710 = 'lantik pengurus porbbi agam   bupati minta warga ikut lestarikan alam'
+sentence711 = 'persebaran flora dan fauna di indonesia faktor jenis jenisnya'
+sentence712 = 'hunting foto ke puncak sempur motret burung pemangsa'
+sentence713 = 'ramuan nenek moyang   aneka minyak dayak maanyan dipercaya berkhasiat'
+sentence714 = 'ekosistem kawasan gunung sawal ciamis perlu dilestarikan '
+sentence715 = 'inilah    pelet ampuh dari kulit hewan yang bisa anda gunakan dijamin lawan jenis bertekuk lutut'
+sentence716 = 'desa wisata malasari info lengkap lokasi dan harga tiket'
+sentence717 = 'apa bedanya kukang dan kungkang '
+sentence718 = 'mengenal hewan kukang yang terlihat lucu tapi gigitannya berbisa'
+sentence719 = 'bksda sumsel evakuasi satwa dilindungi jenis kukang'
+sentence720 = 'jenis jenis kukang di dunia      jenisnya hidup di indonesia'
+sentence721 = 'masih mengira kukang banyak makan buah  '
+sentence722 = 'kukang primata lamban yang berbisa'
+sentence723 = 'pelihara hewan kukang itu gak keren   berikut alasannya '
+sentence724 = 'kukang jawa hasil temuan masyarakat dilepasliarkan '
+sentence725 = 'kukang dalam kearifan lokal masyarakat sunda '
+sentence726 = 'memperjualbelikan kukang di agam   pria      tahun ditangkap tim gabungan '
+sentence727 = 'bksda sumbar lepasliarkan empat ekor kukang di cagar alam maninjau '
+sentence728 = 'berpelukan di udara   uniknya cara kawin kukang '
+sentence729 = 'bksda sumbar lepasliarkan empat ekor kukang di cagar alam maninjau'
+sentence730 = 'perjalanan enam kukang sumatera menuju hutan batutegi lampung '
+sentence731 = 'kisah si primata malam kukang sepanjang          '
+sentence732 = '   kukang endemik dilepasliarkan di bangka '
+sentence733 = 'balai ksda sumsel evakuasi satwa dilindungi  jenis kukang '
+sentence734 = 'temukan bayi kukang tergeletak   warga langsung serahkan hewan dilindungi ini ke bksda '
+sentence735 = 'kukang hewan dilindungi yang berhasil dievakuasi disdamkar garut'
+sentence736 = 'bbksda sumatera utara lepasliar kukang penyerahan warga padangsidimpuan '
+sentence737 = 'giat bbksda sumatera utara lepasliar kukang  di twa danau sicike cike  '
+sentence738 = 'daripada menjual kukang   lebih baik menyerahkannya ke bbksda sumatera utara '
+sentence739 = 'peringati hari primata indonesia    ekor kukang bangka nycticebus bancanus kembali ke rumah'
+sentence740 = 'hati hati   ternyata kukang memiliki racun berbahaya '
+sentence741 = 'kerja keras melestarikan kukang sumatera di indonesia'
+sentence742 = 'lagi   bksda sumsel evakuasi satwa dilindungi jenis kukang  nycticebus coucang '
+sentence743 = 'belajar pegang yang lembut yuk '
+sentence744 = 'hewan apa itu kukang '
+sentence745 = 'mengantar      kukang jawa ke gunung botol   kawasan taman nasional gunung halimun salak '
+sentence746 = 'wow   kukang dapat mendengar suara ultrasonik '
+sentence747 = 'warga desa boangmanalu serahkan kukang kepada balai besar ksda sumatera utara '
+sentence748 = 'riset  sebaran kukang jawa meluas hingga jawa timur '
+sentence749 = 'babe cabita   merasa bersalah beli dan pelihara kukang '
+sentence750 = 'xanthonycticebus pygmaeus   nama ilmiah baru kukang kerdil '
+sentence751 = 'hendak jual    ekor kukang   pria di agam ditangkap polisi'
+sentence752 = 'hari kukang internasional   peringati pelestarian dan perlindungan kukang '
+sentence753 = 'aopgi purwakarta dan mapalasatya serahkan kukang ke bksda jawa barat   ini satwa liar dilindungi '
+sentence754 = 'ribuan mati tersetrum   kukang terancam jaringan listrik '
+sentence755 = 'perubahan iklim ancam populasi kukang jawa '
+sentence756 = 'mengantar enam kukang sumatera ke hutan lindung batutegi '
+sentence757 = 'dinas kehutanan provinsi lampung dan yayasan iar indonesia dalam diskusi  publik jaringan listrik negara dan upaya konservasi kukang sumatera '
+sentence758 = 'kembali   bksda sumsel evakuasi dan lepasliarkan satwa dilindungi jenis kukang  nycticebus coucang '
+sentence759 = 'bksda sumsel terima serahan satwa kukang  nycticebus coucang  dari warga banyuasin'
+sentence760 = 'gipo   kukang liar bergigi ompong yang jadi korban perburuan liar  '
+sentence761 = 'meski lambat   kukang bisa jelajah hutan hingga    kilometer '
+sentence762 = 'bksda sumbar lepasliarkan empat ekor kukang di cagar alam maninjau'
+sentence763 = '   mitos kukang yang beredar di masyarakat'
+sentence764 = 'perbedaan kukang dan kungkang hewan mamalia yang bergerak lambat '
+sentence765 = 'yuk mengenal tujuh spesies kukang di indonesia'
+sentence766 = 'selamat setelah tersengat listrik   kukang elektro dilepasliarkan di hl gunung tarak '
+sentence767 = 'main ke rumah kukang di gunung simpang cianjur selatan '
+sentence768 = 'julitasari   pelajari perilaku kukang demi konservasi satwa '
+sentence769 = 'gipo   kukang sumatera yang tersesat di jalanan banten '
+sentence770 = 'indri saptorini   jadi dokter hewan demi selamatkan kukang '
+sentence771 = 'sadar dilindungi   warga serahkan elang brontok dan kukang'
+sentence772 = 'pelepasliaran kukang sumatera '
+sentence773 = 'xanthonycticebus genus kukang baru untuk kukang kerdil'
+sentence774 = 'bayi kukang ditemukan warga di obyek wisata sukabumi '
+sentence775 = 'elang brontok kukang dievakuasi bksda tasikmalaya di awal         '
+sentence776 = 'temukan bayi kukang tergeletak   warga langsung serahkan hewan dilindungi ini ke bksda'
+sentence777 = 'warga majalengka serahkan kukang jawa ke bksda cirebon '
+sentence778 = 'balai besar tnggp lepasliarkan kukang jawa'
+sentence779 = 'bayi kukang temuan warga dievakuasi bbksda jawa barat '
+sentence780 = '   kukang sumatera dilepasliarkan di ca maninjau '
+sentence781 = 'damkar evakuasi kukang temuan warga di kuningan '
+sentence782 = 'kukang   satwa hutan yang lucu nan menggemaskan '
+sentence783 = 'terancam punah   bksda lampung tak punya data populasi kukang'
+sentence784 = 'mahasiswa s   biologi unas bersama tim penulis unas   rutgers university dan zurich university raih social impact award   primates         '
+sentence785 = 'top     hewan paling lambat di dunia   ada kukang dan koala '
+sentence786 = 'lucunya kukang sunda   greater slow loris   nycticebus coucang '
+sentence787 = 'terancam punah kukang kalimantan dikembalikan ke habitatnya'
+sentence788 = 'segala daya hindari kepunahan satwa liar dilindungi'
+sentence789 = 'mengenal kukang primata cantik yang bergerak lambat dan terancam punah'
+sentence790 = 'selamat setelah tersengat listrik     elektro  dilepasliarkan di hl gunung tarak '
+sentence791 = 'kisah ditreskrimsus polda diy bersama bksda yogyakarta ungkap kasus satwa '
+sentence792 = 'kukang di pekarangan kini telah dilepasliarkan'
+sentence793 = 'kukang yang ditemukan warga di lahat dilepasliarkan'
+sentence794 = 'dilepasliarkan di cagar alam maninjau   empat ekor kukang kembali ke alam bebas '
+sentence795 = 'peringati hari primata indonesia tahun            sebanyak    ekor kukang bangka dilepas ke hutan  '
+sentence796 = 'ukf ipb mengikuti kegiatan pelepasliaran kukang jawa bersama yayasan iar indonesia '
+sentence797 = 'landak kukang jawa jadi penghuni baru gunung ciremai'
+sentence798 = 'kukang jawa dilepasliarkan di kawasan hutan gunung ciremai '
+sentence799 = '     kukang jawa dilepasliarkan di tn gunung halimun salak '
+sentence800 = 'cerita perubahan pt pertamina ft bandung group '
+sentence801 = 'gipo diselundupkan ke jawa dengan gigi ompong'
+sentence802 = 'damkar ciamis evakuasi kukang di pohon kedondong '
+sentence803 = '   kukang sumatera dilepasliarkan di kawasan hutan batu tegi '
+sentence804 = 'induk dan anak kukang dipulangkan ke habitatnya di tahura bukit barisan'
+sentence805 = 'damkar ciamis evakuasi kukang dari genting rumah warga'
+sentence806 = 'ditemukan di kebun karet   anakan kukang diserahkan warga ke bbksda riau '
+sentence807 = 'balai besar tnggp lepasliarkan kukang jawa'
+sentence808 = 'hopeland camp lokasi camping melihat elang jawa di gunung salak '
+sentence809 = 'taman nasional gunung ciremai kedatangan    satwa baru '
+sentence810 = 'camping asyik dengan suasana petualangan di hopeland camp '
+output1   = stemmer.stem(sentence1)
+output2   = stemmer.stem(sentence2)
+output3   = stemmer.stem(sentence3)
+output4   = stemmer.stem(sentence4)
+output5   = stemmer.stem(sentence5)
+output6   = stemmer.stem(sentence6)
+output7   = stemmer.stem(sentence7)
+output8   = stemmer.stem(sentence8)
+output9   = stemmer.stem(sentence9)
+output10   = stemmer.stem(sentence10)
+output11   = stemmer.stem(sentence11)
+output12   = stemmer.stem(sentence12)
+output13   = stemmer.stem(sentence13)
+output14   = stemmer.stem(sentence14)
+output15   = stemmer.stem(sentence15)
+output16   = stemmer.stem(sentence16)
+output17   = stemmer.stem(sentence17)
+output18   = stemmer.stem(sentence18)
+output19   = stemmer.stem(sentence19)
+output20   = stemmer.stem(sentence20)
+output21   = stemmer.stem(sentence21)
+output22   = stemmer.stem(sentence22)
+output23   = stemmer.stem(sentence23)
+output24   = stemmer.stem(sentence24)
+output25   = stemmer.stem(sentence25)
+output26   = stemmer.stem(sentence26)
+output27   = stemmer.stem(sentence27)
+output28   = stemmer.stem(sentence28)
+output29   = stemmer.stem(sentence29)
+output30   = stemmer.stem(sentence30)
+output31   = stemmer.stem(sentence31)
+output32   = stemmer.stem(sentence32)
+output33   = stemmer.stem(sentence33)
+output34   = stemmer.stem(sentence34)
+output35   = stemmer.stem(sentence35)
+output36   = stemmer.stem(sentence36)
+output37   = stemmer.stem(sentence37)
+output38   = stemmer.stem(sentence38)
+output39   = stemmer.stem(sentence39)
+output40   = stemmer.stem(sentence40)
+output41   = stemmer.stem(sentence41)
+output42   = stemmer.stem(sentence42)
+output43   = stemmer.stem(sentence43)
+output44   = stemmer.stem(sentence44)
+output45   = stemmer.stem(sentence45)
+output46   = stemmer.stem(sentence46)
+output47   = stemmer.stem(sentence47)
+output48   = stemmer.stem(sentence48)
+output49   = stemmer.stem(sentence49)
+output50   = stemmer.stem(sentence50)
+output51   = stemmer.stem(sentence51)
+output52   = stemmer.stem(sentence52)
+output53   = stemmer.stem(sentence53)
+output54   = stemmer.stem(sentence54)
+output55   = stemmer.stem(sentence55)
+output56   = stemmer.stem(sentence56)
+output57   = stemmer.stem(sentence57)
+output58   = stemmer.stem(sentence58)
+output59   = stemmer.stem(sentence59)
+output60   = stemmer.stem(sentence60)
+output61   = stemmer.stem(sentence61)
+output62   = stemmer.stem(sentence62)
+output63   = stemmer.stem(sentence63)
+output64   = stemmer.stem(sentence64)
+output65   = stemmer.stem(sentence65)
+output66   = stemmer.stem(sentence66)
+output67   = stemmer.stem(sentence67)
+output68   = stemmer.stem(sentence68)
+output69   = stemmer.stem(sentence69)
+output70   = stemmer.stem(sentence70)
+output71   = stemmer.stem(sentence71)
+output72   = stemmer.stem(sentence72)
+output73   = stemmer.stem(sentence73)
+output74   = stemmer.stem(sentence74)
+output75   = stemmer.stem(sentence75)
+output76   = stemmer.stem(sentence76)
+output77   = stemmer.stem(sentence77)
+output78   = stemmer.stem(sentence78)
+output79   = stemmer.stem(sentence79)
+output80   = stemmer.stem(sentence80)
+output81   = stemmer.stem(sentence81)
+output82   = stemmer.stem(sentence82)
+output83   = stemmer.stem(sentence83)
+output84   = stemmer.stem(sentence84)
+output85   = stemmer.stem(sentence85)
+output86   = stemmer.stem(sentence86)
+output87   = stemmer.stem(sentence87)
+output88   = stemmer.stem(sentence88)
+output89   = stemmer.stem(sentence89)
+output90   = stemmer.stem(sentence90)
+output91   = stemmer.stem(sentence91)
+output92   = stemmer.stem(sentence92)
+output93   = stemmer.stem(sentence93)
+output94   = stemmer.stem(sentence94)
+output95   = stemmer.stem(sentence95)
+output96   = stemmer.stem(sentence96)
+output97   = stemmer.stem(sentence97)
+output98   = stemmer.stem(sentence98)
+output99   = stemmer.stem(sentence99)
+output100   = stemmer.stem(sentence100)
+output101   = stemmer.stem(sentence101)
+output102   = stemmer.stem(sentence102)
+output103   = stemmer.stem(sentence103)
+output104   = stemmer.stem(sentence104)
+output105   = stemmer.stem(sentence105)
+output106   = stemmer.stem(sentence106)
+output107   = stemmer.stem(sentence107)
+output108   = stemmer.stem(sentence108)
+output109   = stemmer.stem(sentence109)
+output110   = stemmer.stem(sentence110)
+output111   = stemmer.stem(sentence111)
+output112   = stemmer.stem(sentence112)
+output113   = stemmer.stem(sentence113)
+output114   = stemmer.stem(sentence114)
+output115   = stemmer.stem(sentence115)
+output116   = stemmer.stem(sentence116)
+output117   = stemmer.stem(sentence117)
+output118   = stemmer.stem(sentence118)
+output119   = stemmer.stem(sentence119)
+output120   = stemmer.stem(sentence120)
+output121   = stemmer.stem(sentence121)
+output122   = stemmer.stem(sentence122)
+output123   = stemmer.stem(sentence123)
+output124   = stemmer.stem(sentence124)
+output125   = stemmer.stem(sentence125)
+output126   = stemmer.stem(sentence126)
+output127   = stemmer.stem(sentence127)
+output128   = stemmer.stem(sentence128)
+output129   = stemmer.stem(sentence129)
+output130   = stemmer.stem(sentence130)
+output131   = stemmer.stem(sentence131)
+output132   = stemmer.stem(sentence132)
+output133   = stemmer.stem(sentence133)
+output134   = stemmer.stem(sentence134)
+output135   = stemmer.stem(sentence135)
+output136   = stemmer.stem(sentence136)
+output137   = stemmer.stem(sentence137)
+output138   = stemmer.stem(sentence138)
+output139   = stemmer.stem(sentence139)
+output140   = stemmer.stem(sentence140)
+output141   = stemmer.stem(sentence141)
+output142   = stemmer.stem(sentence142)
+output143   = stemmer.stem(sentence143)
+output144   = stemmer.stem(sentence144)
+output145   = stemmer.stem(sentence145)
+output146   = stemmer.stem(sentence146)
+output147   = stemmer.stem(sentence147)
+output148   = stemmer.stem(sentence148)
+output149   = stemmer.stem(sentence149)
+output150   = stemmer.stem(sentence150)
+output151   = stemmer.stem(sentence151)
+output152   = stemmer.stem(sentence152)
+output153   = stemmer.stem(sentence153)
+output154   = stemmer.stem(sentence154)
+output155   = stemmer.stem(sentence155)
+output156   = stemmer.stem(sentence156)
+output157   = stemmer.stem(sentence157)
+output158   = stemmer.stem(sentence158)
+output159   = stemmer.stem(sentence159)
+output160   = stemmer.stem(sentence160)
+output161   = stemmer.stem(sentence161)
+output162   = stemmer.stem(sentence162)
+output163   = stemmer.stem(sentence163)
+output164   = stemmer.stem(sentence164)
+output165   = stemmer.stem(sentence165)
+output166   = stemmer.stem(sentence166)
+output167   = stemmer.stem(sentence167)
+output168   = stemmer.stem(sentence168)
+output169   = stemmer.stem(sentence169)
+output170   = stemmer.stem(sentence170)
+output171   = stemmer.stem(sentence171)
+output172   = stemmer.stem(sentence172)
+output173   = stemmer.stem(sentence173)
+output174   = stemmer.stem(sentence174)
+output175   = stemmer.stem(sentence175)
+output176   = stemmer.stem(sentence176)
+output177   = stemmer.stem(sentence177)
+output178   = stemmer.stem(sentence178)
+output179   = stemmer.stem(sentence179)
+output180   = stemmer.stem(sentence180)
+output181   = stemmer.stem(sentence181)
+output182   = stemmer.stem(sentence182)
+output183   = stemmer.stem(sentence183)
+output184   = stemmer.stem(sentence184)
+output185   = stemmer.stem(sentence185)
+output186   = stemmer.stem(sentence186)
+output187   = stemmer.stem(sentence187)
+output188   = stemmer.stem(sentence188)
+output189   = stemmer.stem(sentence189)
+output190   = stemmer.stem(sentence190)
+output191   = stemmer.stem(sentence191)
+output192   = stemmer.stem(sentence192)
+output193   = stemmer.stem(sentence193)
+output194   = stemmer.stem(sentence194)
+output195   = stemmer.stem(sentence195)
+output196   = stemmer.stem(sentence196)
+output197   = stemmer.stem(sentence197)
+output198   = stemmer.stem(sentence198)
+output199   = stemmer.stem(sentence199)
+output200   = stemmer.stem(sentence200)
+output201   = stemmer.stem(sentence201)
+output202   = stemmer.stem(sentence202)
+output203   = stemmer.stem(sentence203)
+output204   = stemmer.stem(sentence204)
+output205   = stemmer.stem(sentence205)
+output206   = stemmer.stem(sentence206)
+output207   = stemmer.stem(sentence207)
+output208   = stemmer.stem(sentence208)
+output209   = stemmer.stem(sentence209)
+output210   = stemmer.stem(sentence210)
+output211   = stemmer.stem(sentence211)
+output212   = stemmer.stem(sentence212)
+output213   = stemmer.stem(sentence213)
+output214   = stemmer.stem(sentence214)
+output215   = stemmer.stem(sentence215)
+output216   = stemmer.stem(sentence216)
+output217   = stemmer.stem(sentence217)
+output218   = stemmer.stem(sentence218)
+output219   = stemmer.stem(sentence219)
+output220   = stemmer.stem(sentence220)
+output221   = stemmer.stem(sentence221)
+output222   = stemmer.stem(sentence222)
+output223   = stemmer.stem(sentence223)
+output224   = stemmer.stem(sentence224)
+output225   = stemmer.stem(sentence225)
+output226   = stemmer.stem(sentence226)
+output227   = stemmer.stem(sentence227)
+output228   = stemmer.stem(sentence228)
+output229   = stemmer.stem(sentence229)
+output230   = stemmer.stem(sentence230)
+output231   = stemmer.stem(sentence231)
+output232   = stemmer.stem(sentence232)
+output233   = stemmer.stem(sentence233)
+output234   = stemmer.stem(sentence234)
+output235   = stemmer.stem(sentence235)
+output236   = stemmer.stem(sentence236)
+output237   = stemmer.stem(sentence237)
+output238   = stemmer.stem(sentence238)
+output239   = stemmer.stem(sentence239)
+output240   = stemmer.stem(sentence240)
+output241   = stemmer.stem(sentence241)
+output242   = stemmer.stem(sentence242)
+output243   = stemmer.stem(sentence243)
+output244   = stemmer.stem(sentence244)
+output245   = stemmer.stem(sentence245)
+output246   = stemmer.stem(sentence246)
+output247   = stemmer.stem(sentence247)
+output248   = stemmer.stem(sentence248)
+output249   = stemmer.stem(sentence249)
+output250   = stemmer.stem(sentence250)
+output251   = stemmer.stem(sentence251)
+output252   = stemmer.stem(sentence252)
+output253   = stemmer.stem(sentence253)
+output254   = stemmer.stem(sentence254)
+output255   = stemmer.stem(sentence255)
+output256   = stemmer.stem(sentence256)
+output257   = stemmer.stem(sentence257)
+output258   = stemmer.stem(sentence258)
+output259   = stemmer.stem(sentence259)
+output260   = stemmer.stem(sentence260)
+output261   = stemmer.stem(sentence261)
+output262   = stemmer.stem(sentence262)
+output263   = stemmer.stem(sentence263)
+output264   = stemmer.stem(sentence264)
+output265   = stemmer.stem(sentence265)
+output266   = stemmer.stem(sentence266)
+output267   = stemmer.stem(sentence267)
+output268   = stemmer.stem(sentence268)
+output269   = stemmer.stem(sentence269)
+output270   = stemmer.stem(sentence270)
+output271   = stemmer.stem(sentence271)
+output272   = stemmer.stem(sentence272)
+output273   = stemmer.stem(sentence273)
+output274   = stemmer.stem(sentence274)
+output275   = stemmer.stem(sentence275)
+output276   = stemmer.stem(sentence276)
+output277   = stemmer.stem(sentence277)
+output278   = stemmer.stem(sentence278)
+output279   = stemmer.stem(sentence279)
+output280   = stemmer.stem(sentence280)
+output281   = stemmer.stem(sentence281)
+output282   = stemmer.stem(sentence282)
+output283   = stemmer.stem(sentence283)
+output284   = stemmer.stem(sentence284)
+output285   = stemmer.stem(sentence285)
+output286   = stemmer.stem(sentence286)
+output287   = stemmer.stem(sentence287)
+output288   = stemmer.stem(sentence288)
+output289   = stemmer.stem(sentence289)
+output290   = stemmer.stem(sentence290)
+output291   = stemmer.stem(sentence291)
+output292   = stemmer.stem(sentence292)
+output293   = stemmer.stem(sentence293)
+output294   = stemmer.stem(sentence294)
+output295   = stemmer.stem(sentence295)
+output296   = stemmer.stem(sentence296)
+output297   = stemmer.stem(sentence297)
+output298   = stemmer.stem(sentence298)
+output299   = stemmer.stem(sentence299)
+output300   = stemmer.stem(sentence300)
+output301   = stemmer.stem(sentence301)
+output302   = stemmer.stem(sentence302)
+output303   = stemmer.stem(sentence303)
+output304   = stemmer.stem(sentence304)
+output305   = stemmer.stem(sentence305)
+output306   = stemmer.stem(sentence306)
+output307   = stemmer.stem(sentence307)
+output308   = stemmer.stem(sentence308)
+output309   = stemmer.stem(sentence309)
+output310   = stemmer.stem(sentence310)
+output311   = stemmer.stem(sentence311)
+output312   = stemmer.stem(sentence312)
+output313   = stemmer.stem(sentence313)
+output314   = stemmer.stem(sentence314)
+output315   = stemmer.stem(sentence315)
+output316   = stemmer.stem(sentence316)
+output317   = stemmer.stem(sentence317)
+output318   = stemmer.stem(sentence318)
+output319   = stemmer.stem(sentence319)
+output320   = stemmer.stem(sentence320)
+output321   = stemmer.stem(sentence321)
+output322   = stemmer.stem(sentence322)
+output323   = stemmer.stem(sentence323)
+output324   = stemmer.stem(sentence324)
+output325   = stemmer.stem(sentence325)
+output326   = stemmer.stem(sentence326)
+output327   = stemmer.stem(sentence327)
+output328   = stemmer.stem(sentence328)
+output329   = stemmer.stem(sentence329)
+output330   = stemmer.stem(sentence330)
+output331   = stemmer.stem(sentence331)
+output332   = stemmer.stem(sentence332)
+output333   = stemmer.stem(sentence333)
+output334   = stemmer.stem(sentence334)
+output335   = stemmer.stem(sentence335)
+output336   = stemmer.stem(sentence336)
+output337   = stemmer.stem(sentence337)
+output338   = stemmer.stem(sentence338)
+output339   = stemmer.stem(sentence339)
+output340   = stemmer.stem(sentence340)
+output341   = stemmer.stem(sentence341)
+output342   = stemmer.stem(sentence342)
+output343   = stemmer.stem(sentence343)
+output344   = stemmer.stem(sentence344)
+output345   = stemmer.stem(sentence345)
+output346   = stemmer.stem(sentence346)
+output347   = stemmer.stem(sentence347)
+output348   = stemmer.stem(sentence348)
+output349   = stemmer.stem(sentence349)
+output350   = stemmer.stem(sentence350)
+output351   = stemmer.stem(sentence351)
+output352   = stemmer.stem(sentence352)
+output353   = stemmer.stem(sentence353)
+output354   = stemmer.stem(sentence354)
+output355   = stemmer.stem(sentence355)
+output356   = stemmer.stem(sentence356)
+output357   = stemmer.stem(sentence357)
+output358   = stemmer.stem(sentence358)
+output359   = stemmer.stem(sentence359)
+output360   = stemmer.stem(sentence360)
+output361   = stemmer.stem(sentence361)
+output362   = stemmer.stem(sentence362)
+output363   = stemmer.stem(sentence363)
+output364   = stemmer.stem(sentence364)
+output365   = stemmer.stem(sentence365)
+output366   = stemmer.stem(sentence366)
+output367   = stemmer.stem(sentence367)
+output368   = stemmer.stem(sentence368)
+output369   = stemmer.stem(sentence369)
+output370   = stemmer.stem(sentence370)
+output371   = stemmer.stem(sentence371)
+output372   = stemmer.stem(sentence372)
+output373   = stemmer.stem(sentence373)
+output374   = stemmer.stem(sentence374)
+output375   = stemmer.stem(sentence375)
+output376   = stemmer.stem(sentence376)
+output377   = stemmer.stem(sentence377)
+output378   = stemmer.stem(sentence378)
+output379   = stemmer.stem(sentence379)
+output380   = stemmer.stem(sentence380)
+output381   = stemmer.stem(sentence381)
+output382   = stemmer.stem(sentence382)
+output383   = stemmer.stem(sentence383)
+output384   = stemmer.stem(sentence384)
+output385   = stemmer.stem(sentence385)
+output386   = stemmer.stem(sentence386)
+output387   = stemmer.stem(sentence387)
+output388   = stemmer.stem(sentence388)
+output389   = stemmer.stem(sentence389)
+output390   = stemmer.stem(sentence390)
+output391   = stemmer.stem(sentence391)
+output392   = stemmer.stem(sentence392)
+output393   = stemmer.stem(sentence393)
+output394   = stemmer.stem(sentence394)
+output395   = stemmer.stem(sentence395)
+output396   = stemmer.stem(sentence396)
+output397   = stemmer.stem(sentence397)
+output398   = stemmer.stem(sentence398)
+output399   = stemmer.stem(sentence399)
+output400   = stemmer.stem(sentence400)
+output401   = stemmer.stem(sentence401)
+output402   = stemmer.stem(sentence402)
+output403   = stemmer.stem(sentence403)
+output404   = stemmer.stem(sentence404)
+output405   = stemmer.stem(sentence405)
+output406   = stemmer.stem(sentence406)
+output407   = stemmer.stem(sentence407)
+output408   = stemmer.stem(sentence408)
+output409   = stemmer.stem(sentence409)
+output410   = stemmer.stem(sentence410)
+output411   = stemmer.stem(sentence411)
+output412   = stemmer.stem(sentence412)
+output413   = stemmer.stem(sentence413)
+output414   = stemmer.stem(sentence414)
+output415   = stemmer.stem(sentence415)
+output416   = stemmer.stem(sentence416)
+output417   = stemmer.stem(sentence417)
+output418   = stemmer.stem(sentence418)
+output419   = stemmer.stem(sentence419)
+output420   = stemmer.stem(sentence420)
+output421   = stemmer.stem(sentence421)
+output422   = stemmer.stem(sentence422)
+output423   = stemmer.stem(sentence423)
+output424   = stemmer.stem(sentence424)
+output425   = stemmer.stem(sentence425)
+output426   = stemmer.stem(sentence426)
+output427   = stemmer.stem(sentence427)
+output428   = stemmer.stem(sentence428)
+output429   = stemmer.stem(sentence429)
+output430   = stemmer.stem(sentence430)
+output431   = stemmer.stem(sentence431)
+output432   = stemmer.stem(sentence432)
+output433   = stemmer.stem(sentence433)
+output434   = stemmer.stem(sentence434)
+output435   = stemmer.stem(sentence435)
+output436   = stemmer.stem(sentence436)
+output437   = stemmer.stem(sentence437)
+output438   = stemmer.stem(sentence438)
+output439   = stemmer.stem(sentence439)
+output440   = stemmer.stem(sentence440)
+output441   = stemmer.stem(sentence441)
+output442   = stemmer.stem(sentence442)
+output443   = stemmer.stem(sentence443)
+output444   = stemmer.stem(sentence444)
+output445   = stemmer.stem(sentence445)
+output446   = stemmer.stem(sentence446)
+output447   = stemmer.stem(sentence447)
+output448   = stemmer.stem(sentence448)
+output449   = stemmer.stem(sentence449)
+output450   = stemmer.stem(sentence450)
+output451   = stemmer.stem(sentence451)
+output452   = stemmer.stem(sentence452)
+output453   = stemmer.stem(sentence453)
+output454   = stemmer.stem(sentence454)
+output455   = stemmer.stem(sentence455)
+output456   = stemmer.stem(sentence456)
+output457   = stemmer.stem(sentence457)
+output458   = stemmer.stem(sentence458)
+output459   = stemmer.stem(sentence459)
+output460   = stemmer.stem(sentence460)
+output461   = stemmer.stem(sentence461)
+output462   = stemmer.stem(sentence462)
+output463   = stemmer.stem(sentence463)
+output464   = stemmer.stem(sentence464)
+output465   = stemmer.stem(sentence465)
+output466   = stemmer.stem(sentence466)
+output467   = stemmer.stem(sentence467)
+output468   = stemmer.stem(sentence468)
+output469   = stemmer.stem(sentence469)
+output470   = stemmer.stem(sentence470)
+output471   = stemmer.stem(sentence471)
+output472   = stemmer.stem(sentence472)
+output473   = stemmer.stem(sentence473)
+output474   = stemmer.stem(sentence474)
+output475   = stemmer.stem(sentence475)
+output476   = stemmer.stem(sentence476)
+output477   = stemmer.stem(sentence477)
+output478   = stemmer.stem(sentence478)
+output479   = stemmer.stem(sentence479)
+output480   = stemmer.stem(sentence480)
+output481   = stemmer.stem(sentence481)
+output482   = stemmer.stem(sentence482)
+output483   = stemmer.stem(sentence483)
+output484   = stemmer.stem(sentence484)
+output485   = stemmer.stem(sentence485)
+output486   = stemmer.stem(sentence486)
+output487   = stemmer.stem(sentence487)
+output488   = stemmer.stem(sentence488)
+output489   = stemmer.stem(sentence489)
+output490   = stemmer.stem(sentence490)
+output491   = stemmer.stem(sentence491)
+output492   = stemmer.stem(sentence492)
+output493   = stemmer.stem(sentence493)
+output494   = stemmer.stem(sentence494)
+output495   = stemmer.stem(sentence495)
+output496   = stemmer.stem(sentence496)
+output497   = stemmer.stem(sentence497)
+output498   = stemmer.stem(sentence498)
+output499   = stemmer.stem(sentence499)
+output500   = stemmer.stem(sentence500)
+output501   = stemmer.stem(sentence501)
+output502   = stemmer.stem(sentence502)
+output503   = stemmer.stem(sentence503)
+output504   = stemmer.stem(sentence504)
+output505   = stemmer.stem(sentence505)
+output506   = stemmer.stem(sentence506)
+output507   = stemmer.stem(sentence507)
+output508   = stemmer.stem(sentence508)
+output509   = stemmer.stem(sentence509)
+output510   = stemmer.stem(sentence510)
+output511   = stemmer.stem(sentence511)
+output512   = stemmer.stem(sentence512)
+output513   = stemmer.stem(sentence513)
+output514   = stemmer.stem(sentence514)
+output515   = stemmer.stem(sentence515)
+output516   = stemmer.stem(sentence516)
+output517   = stemmer.stem(sentence517)
+output518   = stemmer.stem(sentence518)
+output519   = stemmer.stem(sentence519)
+output520   = stemmer.stem(sentence520)
+output521   = stemmer.stem(sentence521)
+output522   = stemmer.stem(sentence522)
+output523   = stemmer.stem(sentence523)
+output524   = stemmer.stem(sentence524)
+output525   = stemmer.stem(sentence525)
+output526   = stemmer.stem(sentence526)
+output527   = stemmer.stem(sentence527)
+output528   = stemmer.stem(sentence528)
+output529   = stemmer.stem(sentence529)
+output530   = stemmer.stem(sentence530)
+output531   = stemmer.stem(sentence531)
+output532   = stemmer.stem(sentence532)
+output533   = stemmer.stem(sentence533)
+output534   = stemmer.stem(sentence534)
+output535   = stemmer.stem(sentence535)
+output536   = stemmer.stem(sentence536)
+output537   = stemmer.stem(sentence537)
+output538   = stemmer.stem(sentence538)
+output539   = stemmer.stem(sentence539)
+output540   = stemmer.stem(sentence540)
+output541   = stemmer.stem(sentence541)
+output542   = stemmer.stem(sentence542)
+output543   = stemmer.stem(sentence543)
+output544   = stemmer.stem(sentence544)
+output545   = stemmer.stem(sentence545)
+output546   = stemmer.stem(sentence546)
+output547   = stemmer.stem(sentence547)
+output548   = stemmer.stem(sentence548)
+output549   = stemmer.stem(sentence549)
+output550   = stemmer.stem(sentence550)
+output551   = stemmer.stem(sentence551)
+output552   = stemmer.stem(sentence552)
+output553   = stemmer.stem(sentence553)
+output554   = stemmer.stem(sentence554)
+output555   = stemmer.stem(sentence555)
+output556   = stemmer.stem(sentence556)
+output557   = stemmer.stem(sentence557)
+output558   = stemmer.stem(sentence558)
+output559   = stemmer.stem(sentence559)
+output560   = stemmer.stem(sentence560)
+output561   = stemmer.stem(sentence561)
+output562   = stemmer.stem(sentence562)
+output563   = stemmer.stem(sentence563)
+output564   = stemmer.stem(sentence564)
+output565   = stemmer.stem(sentence565)
+output566   = stemmer.stem(sentence566)
+output567   = stemmer.stem(sentence567)
+output568   = stemmer.stem(sentence568)
+output569   = stemmer.stem(sentence569)
+output570   = stemmer.stem(sentence570)
+output571   = stemmer.stem(sentence571)
+output572   = stemmer.stem(sentence572)
+output573   = stemmer.stem(sentence573)
+output574   = stemmer.stem(sentence574)
+output575   = stemmer.stem(sentence575)
+output576   = stemmer.stem(sentence576)
+output577   = stemmer.stem(sentence577)
+output578   = stemmer.stem(sentence578)
+output579   = stemmer.stem(sentence579)
+output580   = stemmer.stem(sentence580)
+output581   = stemmer.stem(sentence581)
+output582   = stemmer.stem(sentence582)
+output583   = stemmer.stem(sentence583)
+output584   = stemmer.stem(sentence584)
+output585   = stemmer.stem(sentence585)
+output586   = stemmer.stem(sentence586)
+output587   = stemmer.stem(sentence587)
+output588   = stemmer.stem(sentence588)
+output589   = stemmer.stem(sentence589)
+output590   = stemmer.stem(sentence590)
+output591   = stemmer.stem(sentence591)
+output592   = stemmer.stem(sentence592)
+output593   = stemmer.stem(sentence593)
+output594   = stemmer.stem(sentence594)
+output595   = stemmer.stem(sentence595)
+output596   = stemmer.stem(sentence596)
+output597   = stemmer.stem(sentence597)
+output598   = stemmer.stem(sentence598)
+output599   = stemmer.stem(sentence599)
+output600   = stemmer.stem(sentence600)
+output601   = stemmer.stem(sentence601)
+output602   = stemmer.stem(sentence602)
+output603   = stemmer.stem(sentence603)
+output604   = stemmer.stem(sentence604)
+output605   = stemmer.stem(sentence605)
+output606   = stemmer.stem(sentence606)
+output607   = stemmer.stem(sentence607)
+output608   = stemmer.stem(sentence608)
+output609   = stemmer.stem(sentence609)
+output610   = stemmer.stem(sentence610)
+output611   = stemmer.stem(sentence611)
+output612   = stemmer.stem(sentence612)
+output613   = stemmer.stem(sentence613)
+output614   = stemmer.stem(sentence614)
+output615   = stemmer.stem(sentence615)
+output616   = stemmer.stem(sentence616)
+output617   = stemmer.stem(sentence617)
+output618   = stemmer.stem(sentence618)
+output619   = stemmer.stem(sentence619)
+output620   = stemmer.stem(sentence620)
+output621   = stemmer.stem(sentence621)
+output622   = stemmer.stem(sentence622)
+output623   = stemmer.stem(sentence623)
+output624   = stemmer.stem(sentence624)
+output625   = stemmer.stem(sentence625)
+output626   = stemmer.stem(sentence626)
+output627   = stemmer.stem(sentence627)
+output628   = stemmer.stem(sentence628)
+output629   = stemmer.stem(sentence629)
+output630   = stemmer.stem(sentence630)
+output631   = stemmer.stem(sentence631)
+output632   = stemmer.stem(sentence632)
+output633   = stemmer.stem(sentence633)
+output634   = stemmer.stem(sentence634)
+output635   = stemmer.stem(sentence635)
+output636   = stemmer.stem(sentence636)
+output637   = stemmer.stem(sentence637)
+output638   = stemmer.stem(sentence638)
+output639   = stemmer.stem(sentence639)
+output640   = stemmer.stem(sentence640)
+output641   = stemmer.stem(sentence641)
+output642   = stemmer.stem(sentence642)
+output643   = stemmer.stem(sentence643)
+output644   = stemmer.stem(sentence644)
+output645   = stemmer.stem(sentence645)
+output646   = stemmer.stem(sentence646)
+output647   = stemmer.stem(sentence647)
+output648   = stemmer.stem(sentence648)
+output649   = stemmer.stem(sentence649)
+output650   = stemmer.stem(sentence650)
+output651   = stemmer.stem(sentence651)
+output652   = stemmer.stem(sentence652)
+output653   = stemmer.stem(sentence653)
+output654   = stemmer.stem(sentence654)
+output655   = stemmer.stem(sentence655)
+output656   = stemmer.stem(sentence656)
+output657   = stemmer.stem(sentence657)
+output658   = stemmer.stem(sentence658)
+output659   = stemmer.stem(sentence659)
+output660   = stemmer.stem(sentence660)
+output661   = stemmer.stem(sentence661)
+output662   = stemmer.stem(sentence662)
+output663   = stemmer.stem(sentence663)
+output664   = stemmer.stem(sentence664)
+output665   = stemmer.stem(sentence665)
+output666   = stemmer.stem(sentence666)
+output667   = stemmer.stem(sentence667)
+output668   = stemmer.stem(sentence668)
+output669   = stemmer.stem(sentence669)
+output670   = stemmer.stem(sentence670)
+output671   = stemmer.stem(sentence671)
+output672   = stemmer.stem(sentence672)
+output673   = stemmer.stem(sentence673)
+output674   = stemmer.stem(sentence674)
+output675   = stemmer.stem(sentence675)
+output676   = stemmer.stem(sentence676)
+output677   = stemmer.stem(sentence677)
+output678   = stemmer.stem(sentence678)
+output679   = stemmer.stem(sentence679)
+output680   = stemmer.stem(sentence680)
+output681   = stemmer.stem(sentence681)
+output682   = stemmer.stem(sentence682)
+output683   = stemmer.stem(sentence683)
+output684   = stemmer.stem(sentence684)
+output685   = stemmer.stem(sentence685)
+output686   = stemmer.stem(sentence686)
+output687   = stemmer.stem(sentence687)
+output688   = stemmer.stem(sentence688)
+output689   = stemmer.stem(sentence689)
+output690   = stemmer.stem(sentence690)
+output691   = stemmer.stem(sentence691)
+output692   = stemmer.stem(sentence692)
+output693   = stemmer.stem(sentence693)
+output694   = stemmer.stem(sentence694)
+output695   = stemmer.stem(sentence695)
+output696   = stemmer.stem(sentence696)
+output697   = stemmer.stem(sentence697)
+output698   = stemmer.stem(sentence698)
+output699   = stemmer.stem(sentence699)
+output700   = stemmer.stem(sentence700)
+output701   = stemmer.stem(sentence701)
+output702   = stemmer.stem(sentence702)
+output703   = stemmer.stem(sentence703)
+output704   = stemmer.stem(sentence704)
+output705   = stemmer.stem(sentence705)
+output706   = stemmer.stem(sentence706)
+output707   = stemmer.stem(sentence707)
+output708   = stemmer.stem(sentence708)
+output709   = stemmer.stem(sentence709)
+output710   = stemmer.stem(sentence710)
+output711   = stemmer.stem(sentence711)
+output712   = stemmer.stem(sentence712)
+output713   = stemmer.stem(sentence713)
+output714   = stemmer.stem(sentence714)
+output715   = stemmer.stem(sentence715)
+output716   = stemmer.stem(sentence716)
+output717   = stemmer.stem(sentence717)
+output718   = stemmer.stem(sentence718)
+output719   = stemmer.stem(sentence719)
+output720   = stemmer.stem(sentence720)
+output721   = stemmer.stem(sentence721)
+output722   = stemmer.stem(sentence722)
+output723   = stemmer.stem(sentence723)
+output724   = stemmer.stem(sentence724)
+output725   = stemmer.stem(sentence725)
+output726   = stemmer.stem(sentence726)
+output727   = stemmer.stem(sentence727)
+output728   = stemmer.stem(sentence728)
+output729   = stemmer.stem(sentence729)
+output730   = stemmer.stem(sentence730)
+output731   = stemmer.stem(sentence731)
+output732   = stemmer.stem(sentence732)
+output733   = stemmer.stem(sentence733)
+output734   = stemmer.stem(sentence734)
+output735   = stemmer.stem(sentence735)
+output736   = stemmer.stem(sentence736)
+output737   = stemmer.stem(sentence737)
+output738   = stemmer.stem(sentence738)
+output739   = stemmer.stem(sentence739)
+output740   = stemmer.stem(sentence740)
+output741   = stemmer.stem(sentence741)
+output742   = stemmer.stem(sentence742)
+output743   = stemmer.stem(sentence743)
+output744   = stemmer.stem(sentence744)
+output745   = stemmer.stem(sentence745)
+output746   = stemmer.stem(sentence746)
+output747   = stemmer.stem(sentence747)
+output748   = stemmer.stem(sentence748)
+output749   = stemmer.stem(sentence749)
+output750   = stemmer.stem(sentence750)
+output751   = stemmer.stem(sentence751)
+output752   = stemmer.stem(sentence752)
+output753   = stemmer.stem(sentence753)
+output754   = stemmer.stem(sentence754)
+output755   = stemmer.stem(sentence755)
+output756   = stemmer.stem(sentence756)
+output757   = stemmer.stem(sentence757)
+output758   = stemmer.stem(sentence758)
+output759   = stemmer.stem(sentence759)
+output760   = stemmer.stem(sentence760)
+output761   = stemmer.stem(sentence761)
+output762   = stemmer.stem(sentence762)
+output763   = stemmer.stem(sentence763)
+output764   = stemmer.stem(sentence764)
+output765   = stemmer.stem(sentence765)
+output766   = stemmer.stem(sentence766)
+output767   = stemmer.stem(sentence767)
+output768   = stemmer.stem(sentence768)
+output769   = stemmer.stem(sentence769)
+output770   = stemmer.stem(sentence770)
+output771   = stemmer.stem(sentence771)
+output772   = stemmer.stem(sentence772)
+output773   = stemmer.stem(sentence773)
+output774   = stemmer.stem(sentence774)
+output775   = stemmer.stem(sentence775)
+output776   = stemmer.stem(sentence776)
+output777   = stemmer.stem(sentence777)
+output778   = stemmer.stem(sentence778)
+output779   = stemmer.stem(sentence779)
+output780   = stemmer.stem(sentence780)
+output781   = stemmer.stem(sentence781)
+output782   = stemmer.stem(sentence782)
+output783   = stemmer.stem(sentence783)
+output784   = stemmer.stem(sentence784)
+output785   = stemmer.stem(sentence785)
+output786   = stemmer.stem(sentence786)
+output787   = stemmer.stem(sentence787)
+output788   = stemmer.stem(sentence788)
+output789   = stemmer.stem(sentence789)
+output790   = stemmer.stem(sentence790)
+output791   = stemmer.stem(sentence791)
+output792   = stemmer.stem(sentence792)
+output793   = stemmer.stem(sentence793)
+output794   = stemmer.stem(sentence794)
+output795   = stemmer.stem(sentence795)
+output796   = stemmer.stem(sentence796)
+output797   = stemmer.stem(sentence797)
+output798   = stemmer.stem(sentence798)
+output799   = stemmer.stem(sentence799)
+output800   = stemmer.stem(sentence800)
+output801   = stemmer.stem(sentence801)
+output802   = stemmer.stem(sentence802)
+output803   = stemmer.stem(sentence803)
+output804   = stemmer.stem(sentence804)
+output805   = stemmer.stem(sentence805)
+output806   = stemmer.stem(sentence806)
+output807   = stemmer.stem(sentence807)
+output808   = stemmer.stem(sentence808)
+output809   = stemmer.stem(sentence809)
+output810   = stemmer.stem(sentence810)
+
+
+
+print(output1)
+print(output2)
+print(output3)
+print(output4)
+print(output5)
+print(output6)
+print(output7)
+print(output8)
+print(output9)
+print(output10)
+print(output11)
+print(output12)
+print(output13)
+print(output14)
+print(output15)
+print(output16)
+print(output17)
+print(output18)
+print(output19)
+print(output20)
+print(output21)
+print(output22)
+print(output23)
+print(output24)
+print(output25)
+print(output26)
+print(output27)
+print(output28)
+print(output29)
+print(output30)
+print(output31)
+print(output32)
+print(output33)
+print(output34)
+print(output35)
+print(output36)
+print(output37)
+print(output38)
+print(output39)
+print(output40)
+print(output41)
+print(output42)
+print(output43)
+print(output44)
+print(output45)
+print(output46)
+print(output47)
+print(output48)
+print(output49)
+print(output50)
+print(output51)
+print(output52)
+print(output53)
+print(output54)
+print(output55)
+print(output56)
+print(output57)
+print(output58)
+print(output59)
+print(output60)
+print(output61)
+print(output62)
+print(output63)
+print(output64)
+print(output65)
+print(output66)
+print(output67)
+print(output68)
+print(output69)
+print(output70)
+print(output71)
+print(output72)
+print(output73)
+print(output74)
+print(output75)
+print(output76)
+print(output77)
+print(output78)
+print(output79)
+print(output80)
+print(output81)
+print(output82)
+print(output83)
+print(output84)
+print(output85)
+print(output86)
+print(output87)
+print(output88)
+print(output89)
+print(output90)
+print(output91)
+print(output92)
+print(output93)
+print(output94)
+print(output95)
+print(output96)
+print(output97)
+print(output98)
+print(output99)
+print(output100)
+print(output101)
+print(output102)
+print(output103)
+print(output104)
+print(output105)
+print(output106)
+print(output107)
+print(output108)
+print(output109)
+print(output110)
+print(output111)
+print(output112)
+print(output113)
+print(output114)
+print(output115)
+print(output116)
+print(output117)
+print(output118)
+print(output119)
+print(output120)
+print(output121)
+print(output122)
+print(output123)
+print(output124)
+print(output125)
+print(output126)
+print(output127)
+print(output128)
+print(output129)
+print(output130)
+print(output131)
+print(output132)
+print(output133)
+print(output134)
+print(output135)
+print(output136)
+print(output137)
+print(output138)
+print(output139)
+print(output140)
+print(output141)
+print(output142)
+print(output143)
+print(output144)
+print(output145)
+print(output146)
+print(output147)
+print(output148)
+print(output149)
+print(output150)
+print(output151)
+print(output152)
+print(output153)
+print(output154)
+print(output155)
+print(output156)
+print(output157)
+print(output158)
+print(output159)
+print(output160)
+print(output161)
+print(output162)
+print(output163)
+print(output164)
+print(output165)
+print(output166)
+print(output167)
+print(output168)
+print(output169)
+print(output170)
+print(output171)
+print(output172)
+print(output173)
+print(output174)
+print(output175)
+print(output176)
+print(output177)
+print(output178)
+print(output179)
+print(output180)
+print(output181)
+print(output182)
+print(output183)
+print(output184)
+print(output185)
+print(output186)
+print(output187)
+print(output188)
+print(output189)
+print(output190)
+print(output191)
+print(output192)
+print(output193)
+print(output194)
+print(output195)
+print(output196)
+print(output197)
+print(output198)
+print(output199)
+print(output200)
+print(output201)
+print(output202)
+print(output203)
+print(output204)
+print(output205)
+print(output206)
+print(output207)
+print(output208)
+print(output209)
+print(output210)
+print(output211)
+print(output212)
+print(output213)
+print(output214)
+print(output215)
+print(output216)
+print(output217)
+print(output218)
+print(output219)
+print(output220)
+print(output221)
+print(output222)
+print(output223)
+print(output224)
+print(output225)
+print(output226)
+print(output227)
+print(output228)
+print(output229)
+print(output230)
+print(output231)
+print(output232)
+print(output233)
+print(output234)
+print(output235)
+print(output236)
+print(output237)
+print(output238)
+print(output239)
+print(output240)
+print(output241)
+print(output242)
+print(output243)
+print(output244)
+print(output245)
+print(output246)
+print(output247)
+print(output248)
+print(output249)
+print(output250)
+print(output251)
+print(output252)
+print(output253)
+print(output254)
+print(output255)
+print(output256)
+print(output257)
+print(output258)
+print(output259)
+print(output260)
+print(output261)
+print(output262)
+print(output263)
+print(output264)
+print(output265)
+print(output266)
+print(output267)
+print(output268)
+print(output269)
+print(output270)
+print(output271)
+print(output272)
+print(output273)
+print(output274)
+print(output275)
+print(output276)
+print(output277)
+print(output278)
+print(output279)
+print(output280)
+print(output281)
+print(output282)
+print(output283)
+print(output284)
+print(output285)
+print(output286)
+print(output287)
+print(output288)
+print(output289)
+print(output290)
+print(output291)
+print(output292)
+print(output293)
+print(output294)
+print(output295)
+print(output296)
+print(output297)
+print(output298)
+print(output299)
+print(output300)
+print(output301)
+print(output302)
+print(output303)
+print(output304)
+print(output305)
+print(output306)
+print(output307)
+print(output308)
+print(output309)
+print(output310)
+print(output311)
+print(output312)
+print(output313)
+print(output314)
+print(output315)
+print(output316)
+print(output317)
+print(output318)
+print(output319)
+print(output320)
+print(output321)
+print(output322)
+print(output323)
+print(output324)
+print(output325)
+print(output326)
+print(output327)
+print(output328)
+print(output329)
+print(output330)
+print(output331)
+print(output332)
+print(output333)
+print(output334)
+print(output335)
+print(output336)
+print(output337)
+print(output338)
+print(output339)
+print(output340)
+print(output341)
+print(output342)
+print(output343)
+print(output344)
+print(output345)
+print(output346)
+print(output347)
+print(output348)
+print(output349)
+print(output350)
+print(output351)
+print(output352)
+print(output353)
+print(output354)
+print(output355)
+print(output356)
+print(output357)
+print(output358)
+print(output359)
+print(output360)
+print(output361)
+print(output362)
+print(output363)
+print(output364)
+print(output365)
+print(output366)
+print(output367)
+print(output368)
+print(output369)
+print(output370)
+print(output371)
+print(output372)
+print(output373)
+print(output374)
+print(output375)
+print(output376)
+print(output377)
+print(output378)
+print(output379)
+print(output380)
+print(output381)
+print(output382)
+print(output383)
+print(output384)
+print(output385)
+print(output386)
+print(output387)
+print(output388)
+print(output389)
+print(output390)
+print(output391)
+print(output392)
+print(output393)
+print(output394)
+print(output395)
+print(output396)
+print(output397)
+print(output398)
+print(output399)
+print(output400)
+print(output401)
+print(output402)
+print(output403)
+print(output404)
+print(output405)
+print(output406)
+print(output407)
+print(output408)
+print(output409)
+print(output410)
+print(output411)
+print(output412)
+print(output413)
+print(output414)
+print(output415)
+print(output416)
+print(output417)
+print(output418)
+print(output419)
+print(output420)
+print(output421)
+print(output422)
+print(output423)
+print(output424)
+print(output425)
+print(output426)
+print(output427)
+print(output428)
+print(output429)
+print(output430)
+print(output431)
+print(output432)
+print(output433)
+print(output434)
+print(output435)
+print(output436)
+print(output437)
+print(output438)
+print(output439)
+print(output440)
+print(output441)
+print(output442)
+print(output443)
+print(output444)
+print(output445)
+print(output446)
+print(output447)
+print(output448)
+print(output449)
+print(output450)
+print(output451)
+print(output452)
+print(output453)
+print(output454)
+print(output455)
+print(output456)
+print(output457)
+print(output458)
+print(output459)
+print(output460)
+print(output461)
+print(output462)
+print(output463)
+print(output464)
+print(output465)
+print(output466)
+print(output467)
+print(output468)
+print(output469)
+print(output470)
+print(output471)
+print(output472)
+print(output473)
+print(output474)
+print(output475)
+print(output476)
+print(output477)
+print(output478)
+print(output479)
+print(output480)
+print(output481)
+print(output482)
+print(output483)
+print(output484)
+print(output485)
+print(output486)
+print(output487)
+print(output488)
+print(output489)
+print(output490)
+print(output491)
+print(output492)
+print(output493)
+print(output494)
+print(output495)
+print(output496)
+print(output497)
+print(output498)
+print(output499)
+print(output500)
+print(output501)
+print(output502)
+print(output503)
+print(output504)
+print(output505)
+print(output506)
+print(output507)
+print(output508)
+print(output509)
+print(output510)
+print(output511)
+print(output512)
+print(output513)
+print(output514)
+print(output515)
+print(output516)
+print(output517)
+print(output518)
+print(output519)
+print(output520)
+print(output521)
+print(output522)
+print(output523)
+print(output524)
+print(output525)
+print(output526)
+print(output527)
+print(output528)
+print(output529)
+print(output530)
+print(output531)
+print(output532)
+print(output533)
+print(output534)
+print(output535)
+print(output536)
+print(output537)
+print(output538)
+print(output539)
+print(output540)
+print(output541)
+print(output542)
+print(output543)
+print(output544)
+print(output545)
+print(output546)
+print(output547)
+print(output548)
+print(output549)
+print(output550)
+print(output551)
+print(output552)
+print(output553)
+print(output554)
+print(output555)
+print(output556)
+print(output557)
+print(output558)
+print(output559)
+print(output560)
+print(output561)
+print(output562)
+print(output563)
+print(output564)
+print(output565)
+print(output566)
+print(output567)
+print(output568)
+print(output569)
+print(output570)
+print(output571)
+print(output572)
+print(output573)
+print(output574)
+print(output575)
+print(output576)
+print(output577)
+print(output578)
+print(output579)
+print(output580)
+print(output581)
+print(output582)
+print(output583)
+print(output584)
+print(output585)
+print(output586)
+print(output587)
+print(output588)
+print(output589)
+print(output590)
+print(output591)
+print(output592)
+print(output593)
+print(output594)
+print(output595)
+print(output596)
+print(output597)
+print(output598)
+print(output599)
+print(output600)
+print(output601)
+print(output602)
+print(output603)
+print(output604)
+print(output605)
+print(output606)
+print(output607)
+print(output608)
+print(output609)
+print(output610)
+print(output611)
+print(output612)
+print(output613)
+print(output614)
+print(output615)
+print(output616)
+print(output617)
+print(output618)
+print(output619)
+print(output620)
+print(output621)
+print(output622)
+print(output623)
+print(output624)
+print(output625)
+print(output626)
+print(output627)
+print(output628)
+print(output629)
+print(output630)
+print(output631)
+print(output632)
+print(output633)
+print(output634)
+print(output635)
+print(output636)
+print(output637)
+print(output638)
+print(output639)
+print(output640)
+print(output641)
+print(output642)
+print(output643)
+print(output644)
+print(output645)
+print(output646)
+print(output647)
+print(output648)
+print(output649)
+print(output650)
+print(output651)
+print(output652)
+print(output653)
+print(output654)
+print(output655)
+print(output656)
+print(output657)
+print(output658)
+print(output659)
+print(output660)
+print(output661)
+print(output662)
+print(output663)
+print(output664)
+print(output665)
+print(output666)
+print(output667)
+print(output668)
+print(output669)
+print(output670)
+print(output671)
+print(output672)
+print(output673)
+print(output674)
+print(output675)
+print(output676)
+print(output677)
+print(output678)
+print(output679)
+print(output680)
+print(output681)
+print(output682)
+print(output683)
+print(output684)
+print(output685)
+print(output686)
+print(output687)
+print(output688)
+print(output689)
+print(output690)
+print(output691)
+print(output692)
+print(output693)
+print(output694)
+print(output695)
+print(output696)
+print(output697)
+print(output698)
+print(output699)
+print(output700)
+print(output701)
+print(output702)
+print(output703)
+print(output704)
+print(output705)
+print(output706)
+print(output707)
+print(output708)
+print(output709)
+print(output710)
+print(output711)
+print(output712)
+print(output713)
+print(output714)
+print(output715)
+print(output716)
+print(output717)
+print(output718)
+print(output719)
+print(output720)
+print(output721)
+print(output722)
+print(output723)
+print(output724)
+print(output725)
+print(output726)
+print(output727)
+print(output728)
+print(output729)
+print(output730)
+print(output731)
+print(output732)
+print(output733)
+print(output734)
+print(output735)
+print(output736)
+print(output737)
+print(output738)
+print(output739)
+print(output740)
+print(output741)
+print(output742)
+print(output743)
+print(output744)
+print(output745)
+print(output746)
+print(output747)
+print(output748)
+print(output749)
+print(output750)
+print(output751)
+print(output752)
+print(output753)
+print(output754)
+print(output755)
+print(output756)
+print(output757)
+print(output758)
+print(output759)
+print(output760)
+print(output761)
+print(output762)
+print(output763)
+print(output764)
+print(output765)
+print(output766)
+print(output767)
+print(output768)
+print(output769)
+print(output770)
+print(output771)
+print(output772)
+print(output773)
+print(output774)
+print(output775)
+print(output776)
+print(output777)
+print(output778)
+print(output779)
+print(output780)
+print(output781)
+print(output782)
+print(output783)
+print(output784)
+print(output785)
+print(output786)
+print(output787)
+print(output788)
+print(output789)
+print(output790)
+print(output791)
+print(output792)
+print(output793)
+print(output794)
+print(output795)
+print(output796)
+print(output797)
+print(output798)
+print(output799)
+print(output800)
+print(output801)
+print(output802)
+print(output803)
+print(output804)
+print(output805)
+print(output806)
+print(output807)
+print(output808)
+print(output809)
+print(output810)
